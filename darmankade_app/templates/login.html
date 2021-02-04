@@ -1,14 +1,14 @@
 <html>
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>ورود</title>
     <!-- icon in title bar-->
-    <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./styles/global-styles.css">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     <!-- Shabnam font style -->
-    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
 </head>
 
 <body class="flex-flow">
@@ -16,7 +16,7 @@
 <!-- right side panel with logo and blue background -->
 <div id="welcome" class="flex-flow">
     <div>
-        <img src="./images/login-page/7bbb5c4.svg" alt="">
+        <img src="{% static 'images/login-page/7bbb5c4.svg' %}" alt="">
         <h2>به درمانکده خوش آمدید</h2>
         <h3>نوبت دهی آنلاین مطب پزشکان</h3>
     </div>

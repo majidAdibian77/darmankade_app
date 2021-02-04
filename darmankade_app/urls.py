@@ -4,4 +4,6 @@ from darmankade_app import views
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
+    url(r'^patient_register$', views.patient_register, name="patient_register"),
+    url(r'^patient_login$', views.patient_login, name="patient_login"),
     ]
