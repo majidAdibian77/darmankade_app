@@ -1,0 +1,10 @@
+.our-box-header
+{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+}
+
+header a /* text color of links in header drop down must be black */
+{
+    color: black;
+}

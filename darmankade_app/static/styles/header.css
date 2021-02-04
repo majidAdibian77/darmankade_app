@@ -1,0 +1,161 @@
+/* ----------------------------------------------------------------------- */
+/* header section */
+
+#main-header /* top section of page */
+{
+    background-color: rgb(250, 250, 250);
+    height: 80px;
+}
+#header-container /* container of header */
+{
+    height: 80px;
+    width: 80%;
+    margin: auto;
+}
+#logo-container /* container for website logo */
+{
+    width: 14%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#menu /* menu container */
+{
+    width: 72%;
+}
+.menu-item /* styles of each menu item */
+{
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: auto;
+    font-size: 120%;
+}
+.menu-icon /* icon style of each menu item */
+{
+    margin-left: 5px
+}
+.dr-link, .menu-link /* menu links */
+{
+    display: flex;
+    text-decoration: none;
+    color: #3b4157;
+    padding-bottom: 20px;
+}
+.dr-link:hover, .menu-link:hover /* color change when hovering menu items */
+{
+    color: #fb815e;
+}
+.dr-content /* style of menu drop down */ 
+{
+    top: 78px;
+    right: 20%;
+    width: 60%;
+    display: none;
+    position: absolute;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid rgb(237, 237, 237);
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+.dr:hover > .dr-content /* show drop down when hovering on menu link */
+{
+    display: block !important;
+}
+.drop-down-list /* the looks of specialty and consulting drop down list */
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 16px;
+    width: 70%;
+}
+.grid-item /* each item on grid list */
+{
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.spec-icon /* icon style for each specialty on drop down list */
+{
+    width: 20%;
+    height: auto;
+    margin-left: 20px;
+}
+/* next 2 blocks define text style for each specialty on drop down list */
+.spec-text
+{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.spec-text:hover 
+{
+    color: rgb(23, 128, 223);
+    border-bottom: 1px rgb(23, 128, 223) dotted;
+}
+.banner-container /* banner container style on drop down menu */
+{
+    width: 30%;
+    margin-left: 24px;
+}
+.banner /* banner style on drop down menu */
+{
+    width: 100%;
+}
+/* next 4 blocks define button style in drop down menu */
+.dr-btn
+{
+    max-width: 150px;
+    line-height: 46px;
+    margin-top: 10px;
+    font-size: 80%;
+    border: 2px #fb815e solid;
+    border-radius: 5px;
+    color: #fb815e;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 900;
+}
+.dr-btn:hover
+{
+    color: #fff;
+    background-color: #fb815e;
+}
+.dr-btn-text
+{
+    margin-left: 5px;
+    margin-right: 7px;
+}
+.dr-btn-icon
+{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#login-box /* container box for login button */
+{
+    margin-top: 40px;
+    margin-bottom: auto;
+}
+#login-button /* style of login button in header */ 
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(23, 128, 223);
+    font-family: 'B Nazanin';
+    font-size: 120%;
+    font-weight: 900;
+    background-color: rgb(237, 237, 237);
+}
+#login-button:hover /* login button when hovering */
+{
+    color: #fb815e;
+}
+#login-box svg /* icon style in login button */
+{
+    transform: scaleX(-1);
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}

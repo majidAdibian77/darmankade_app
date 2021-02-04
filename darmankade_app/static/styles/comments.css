@@ -1,0 +1,105 @@
+/* ----------------------------------------------------------------------- */
+/* comments */
+
+#comments /* comment section container */
+{
+    width: 80%;
+    margin: auto;
+}
+
+#comment-box > img /* qoute image on top of comment box */
+{
+    width: 50px;
+    height: auto;
+    position: relative;
+    right: 30px;
+    top: 22px;
+}
+
+#description, #comment-box /* left and right side containers of comment section */
+{
+    width: 50%;
+    padding: 20px;
+}
+
+#description /* right side of comment section */
+{
+    margin-top: 150px;
+}
+
+#main-comment-box
+{
+    padding: 20px;
+    border: 2px#1780df solid;
+    border-radius: 20px;
+    font-size: 120%;
+    background-color: rgb(229, 242, 254);
+}
+
+#comment-text /* comment text style */
+{
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+#comment-info /* comment info container */
+{
+    border-top: 2px rgb(110, 119, 148) dashed;
+    padding-top: 20px;
+}
+
+#comment-info > img /* image inside comment info container */
+{
+    width: 20%;
+}
+#comment-info > div /* info about image */
+{
+    width: 50%;
+    padding-top: 25px;
+    padding-right: 20px;
+}
+#comment-info > button /* see comments button */
+{
+    width: 30%;
+    height: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background-color: #fb815e;
+    cursor: pointer;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+#comment-info > button:hover /* hovering on see comments button */
+{
+    background-color: #fa6439;
+}
+
+
+#mark-text /* mark and text container */
+{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    right: 450px;
+    top: -16px;   
+}
+
+#mark /* arrow mark below comment box */
+{
+    width: 30px;
+    height: 30px;
+    border-top: 0;
+    border-right: 1px solid #1780df;
+    border-bottom: 1px solid #1780df;
+    border-left: 0;
+    content: "";
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #e5f2fe;
+    z-index: 1;
+}
+#under-mark /* text below arrow sign */
+{
+    margin-top: 10px;
+}

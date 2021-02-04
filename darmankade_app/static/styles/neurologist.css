@@ -1,0 +1,86 @@
+/* ----------------------------------------------------------------------- */
+
+.search-box > input /* input box for search bar in sidebar */
+{
+    padding-right: 50px !important;
+}
+
+.search-box > svg /* magnifier image inside search bar */
+{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.our-checkbox /* special checkbox like a slider */
+{
+    width: 60px;
+    height: 30px;
+}
+
+.our-checkbox > div /* circle inside checkbox */
+{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 20px;
+    top: 2px;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.doctor-box:hover /* doctor box has orange border when hovering */
+{
+    border: 1px orange solid !important;
+}
+
+@keyframes book-btn-anim /* booking button animation */
+{
+    0%   {width: 50px; border-radius: 20px 10px 10px 20px;}
+    100% {width: 238px; border-radius: 10px;}
+}
+.book-btn-effect /* booking button effect */
+{
+    position: absolute;
+    background-color: white;
+    top: 0px;
+    opacity: 0.3;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px 10px 10px 20px;
+}
+.book-btn:hover > .book-btn-effect /* booking button hover */
+{
+    animation-name: book-btn-anim;
+    animation-duration: 0.5s;
+    width: 238px;
+    border-radius: 10px;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.like-btn:hover /* like button for each doctor */
+{
+    fill: orange;
+    stroke: orange;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.custom-class /* plus sign with blue background and rounded corners */
+{
+    background: #1780df;
+    padding: 3px;
+    color: #fff;
+    border-radius: 25% 0 25% 25%;
+}
+
+/* ----------------------------------------------------------------------- */
+
+header a /* text color of links in header drop down must be black */
+{
+    color: black;
+}
+

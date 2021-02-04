@@ -1,0 +1,166 @@
+#main-content /* main content container consists of search box and best specialties */
+{
+    padding-top: 20px;
+    background-color: rgb(250, 250, 250);
+    padding-bottom: 50px;
+}
+
+/* ----------------------------------------------------------------------- */
+/* search box */
+
+#search-box /* search box (blue panel below header) */
+{
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+    height: 242px;
+    border-radius: 10px;
+    background-size: cover;
+    background-image: url('./images/search-bar/5ef8034.png');
+    background-color: #1780df;
+}
+
+#search-title /* title of search box */
+{
+    color: #fff;
+    text-align: center;
+    font-size: 300%;
+}
+
+#search-bar /* text box, city names and search button container */
+{
+    display: flex;
+    width: 60%;
+    height: 60px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+#search-bar > input /* textbox styles */
+{
+    width: 60%;
+    outline: none;
+    padding-right: 20px;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* next 4 blocks style city names section */
+#search-bar > div 
+{
+    width: 20%;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+#city-1, #city-2, #city-3
+{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#city-1
+{
+    padding-right: 10px;
+    border-right: 1px #000 solid;
+}
+#city-2
+{
+    margin-top: auto;   
+    width: 70%;
+    margin-right: 10px;
+}
+
+#search-button /* normal search button style */
+{
+    width: 20%;
+    color: #fff;
+    border: none;
+    outline: none;
+    background-color: #fb815e;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+}
+#search-button:hover /* search button style when hovering */
+{
+    background-color: #fa6439;
+}
+
+/* ----------------------------------------------------------------------- */
+/* best specialties */
+
+#best-specialties /* best specialties container */
+{
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+}
+
+#bs-title /* title box */
+{
+    display: flex;
+    margin-top: 20px;
+}
+
+/* left and right titles for best specialties section */
+.bs-title-1
+{
+    font-size: 140%;
+    width: 89%;
+    padding: 10px;
+}
+.bs-title-2
+{
+    display: flex;
+    font-size: 140%;
+    width: 11%;
+    margin-top: auto;
+    line-height: 100%;
+    color: #1780df;
+    cursor: pointer;
+}
+.bs-title-2:hover
+{
+    color: #fa6439;
+}
+
+#bs-list /* list of specialties container */
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    margin-top: 20px;
+}
+
+.spec-box /* a single specialty box container */
+{
+    border: 1px rgb(223, 223, 223) solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 150px;
+    width: 125px;
+    margin: auto;
+    cursor: pointer;
+}
+.spec-box:hover /* hovering on specialty box */
+{
+    box-shadow: 0px 3px 5px 2px rgb(232, 232, 232);
+}
+.spec-box-image /* image container inside specialty box */ 
+{
+    border-radius: 5px;
+    background-color: #1780df;
+    height: 100px;
+}
+.spec-box-image > img /* image inside container */
+{
+    position: relative;
+    top: 25px;
+    right: 35px;
+}
+.spec-box-text /* text inside specialty box */ 
+{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 120%;
+}

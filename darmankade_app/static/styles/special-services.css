@@ -1,0 +1,83 @@
+/* ----------------------------------------------------------------------- */
+/* special services */
+
+#special-services /* main container of special services */
+{
+    background-image: url('../images/special-services/75bb3ac.png');
+    background-size: cover;
+    padding-top: 20px;
+}
+
+#special-services h1 /* title of special services */
+{
+    text-align: center;
+    color: #fff;
+}
+
+#special-services > div /* panel below title of special services */
+{
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.service-item /* style of each service */
+{
+    margin: 10px;
+    padding-top: 20px;
+    width: 50%;
+}
+
+.service-item > img /* image of service */
+{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.service-title /* title of service */
+{
+    padding-top: 20px;
+    font-size: 130%;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+}
+
+.service-item > p /* description of service */
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    color: #fff;
+}
+
+/* next 3 blocks define style of buttons inside service container */
+.service-button
+{
+    outline: none;
+    border: none;
+    background-color: #fb815e;
+    cursor: pointer;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+.service-button > div
+{
+    display: flex;
+    font-size: 120%;
+    width: fit-content;
+    margin: auto;
+}
+.service-button:hover
+{
+    background-color: #fa6439;
+}

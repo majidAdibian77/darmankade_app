@@ -1,0 +1,542 @@
+/* address of this page on top of page */
+#page-address {
+    width: 80%;
+    margin: auto;
+}
+
+/* style of list of links to this page */
+#page-address > ol {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-right: 0;
+    color: #1780df;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+
+#page-address li {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#page-address li:last-child {
+    color: #6e7794;
+}
+
+#page-address svg {
+    width: 20px;
+    vertical-align: middle;
+}
+
+/*  style of doctor information in first section of page */
+#doctor-information-container {
+    width: 80%;
+    display: flex;
+    color: #6e7794;
+    margin: 1rem auto;
+}
+
+/*  style of doctor information card that is right part of this section */
+#doctor-information-card {
+    width: 33.33%;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: rgb(23, 128, 223);
+    border-radius: 10px;
+    padding-top: 1rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+    margin-left: 1.5rem;
+    margin-bottom: 15px;
+    height: 100%;
+    position: sticky;
+    top: 0;
+}
+
+/*  style of top part of doctor information card */
+#doctor-information-card-top {
+    margin: .5rem 1.5rem;
+    justify-content: space-between;
+    display: flex;
+}
+
+/* style of image in top part of card */
+#doctor-information-card-top img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+
+}
+
+#doctor-information-card-top svg {
+    cursor: pointer;
+    color: #fff;
+}
+
+#doctor-information-card-top svg:hover {
+    fill: rgb(251, 129, 94);
+}
+
+#doctor-information-card-top svg:last-child:hover {
+    color: rgb(251, 129, 94);
+}
+
+/* style of middle part of doctor information card */
+#doctor-information-card-middle {
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+#doctor-information-card-middle h1 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+
+}
+
+#doctor-information-card-middle h2 {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+#doctor-information-card-middle h3 {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+
+}
+
+/* style of bottom part of doctor information card */
+#doctor-information-card-bottom {
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin: 0.5rem;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+#doctor-information-card-bottom div {
+    padding: .5rem;
+    width: 33.33%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#doctor-information-card-bottom div span {
+    width: 100%;
+    margin-top: 0.20rem;
+}
+
+#doctor-information-card-bottom > div > span:last-child {
+    font-size: 0.8rem;
+    margin-top: 0.45rem;
+    color: rgb(59, 65, 87);
+
+}
+
+/*  style of online appointments for doctor of this page that is left part of this section */
+#online-appointments-div1 {
+    margin-bottom: 1.5rem;
+    width: 66.66%;
+}
+
+#online-appointments-div2 {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+/* style of location of doctor's office that is first part of online appointments section */
+#doctor-office-location {
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+#doctor-office-location > button {
+    width: 25%;
+    cursor: pointer;
+    background-color: #1780df;
+    color: #fff;
+    border-radius: 5px;
+    padding: .5rem 1rem .5rem 0;
+    border: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+}
+
+/* style of dropdown icon */
+#doctor-office-location > button > span {
+    margin: auto auto auto 10px;
+    float: left;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+/* style of calendar and free time box */
+#calendar-div {
+    color: #6e7794;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* style of calendar section */
+#calendar-row {
+    height: 100%;
+    padding: .5rem 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#calendar-row > ul {
+    display: flex;
+    width: 83%;
+    justify-content: space-between;
+    padding-right: 0;
+    height: 100%;
+    list-style: none;
+    color: #1780df
+}
+
+/* style of days in calendar */
+#calendar-row > ul li {
+    width: 12%;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, .125);
+}
+
+#calendar-row > ul li p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#calendar-row > ul li p:last-child {
+    font-size: 10px;
+}
+
+#calendar-row > ul li:first-child {
+    background-color: #ededed;
+    color: #acadaf;
+}
+
+#calendar-row > ul li:nth-child(2) {
+    background-color: #1780df;
+    color: #fff;
+}
+
+/* style of button in calendar to go to another days */
+#calendar-row button {
+    padding: 5px;
+    outline: none;
+    border: 1px solid #fb815e;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    color: #fb815e;
+    display: flex;
+    align-items: center;
+    fill: #fb815e;
+    margin: auto 0;
+}
+
+/* style of showing free times to reserve */
+#free-times-div {
+    border-radius: 10px;
+    color: #6e7794;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, .125);
+    font-size: 1rem;
+}
+
+#free-times-explain {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+#free-times-explain > h5 {
+    margin: 0 10px 0 0;
+}
+
+#free-times-div button {
+    width: 11%;
+    border-radius: 5px;
+    padding: 0.6rem;
+    background-color: #fb815e;
+    border: 0;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#free-times-div button:nth-child(2) {
+    background-color: rgba(0, 0, 0, .125);
+    color: #acadaf;
+}
+
+#free-times-div button:last-child:hover {
+    background-color: #fa5a2c;
+}
+
+/* style of showing examples of comments */
+#user-comments-examples {
+    border-radius: 10px;
+    border: 1px solid #ededed;
+    background-color: #fff;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+/* style of doctor score box */
+#doctor-score-div {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    width: 13%;
+    display: flex;
+    background: #e5f2fe;
+    text-align: center;
+    border-radius: 5px;
+    color: #1780df;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    /*height: 110%;*/
+}
+
+/* top part of doctor in score card contain image of doctor*/
+#doctor-score-top-div {
+    color: #1780df;
+    font-weight: 700;
+    font-size: 38px;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+}
+
+/* name of doctor in score card */
+#doctor-score-middle-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+#doctor-score-middle-div svg {
+    fill: #1780df;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+#doctor-score-div > p {
+    margin: 10px auto auto;
+    color: #6e7794;
+}
+
+/* style of example of comment text */
+#user-comment-example {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 130px;
+}
+
+#user-comment-example ul {
+    list-style: none;
+}
+
+/* style of name of comment writer  */
+#username-comment-example {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#username-comment-example svg {
+    margin-left: 10px;
+}
+
+#user-comment-example > ul > li > p {
+    color: #3b4157;
+}
+
+/* style of four cycle in bottom of comment to go to other comments */
+#user-comment-example ol {
+    bottom: -1rem;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+#user-comment-example > ol > li {
+    width: 8px;
+    height: 8px;
+    background-color: #ededed;
+    border-radius: 50%;
+    margin: 4px;
+    cursor: pointer;
+}
+
+#user-comment-example > ol > li:first-child {
+    background-color: #fb815e;
+}
+
+#user-comment-example > svg {
+    outline: none;
+    /*left: 11%;*/
+    /*top: 92%;*/
+    bottom: 50px;
+    /*bottom: 2px;*/
+    background-color: #fafafa;
+    padding: .25rem;
+    position: relative;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #1780df;
+    float: left;
+
+}
+
+/* style of information about location section */
+#location-information-box {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    margin-bottom: 1rem;
+}
+
+/* style of header of location section */
+#location-information-box > ul {
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    background: #ededed;
+    height: 53px;
+    color: #6e7794;
+    display: flex;
+    list-style: none;
+    padding-right: 0;
+    margin-top: 0;
+}
+
+#location-information-box > ul > li {
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#location-information-box > ul > li:first-child {
+    background-color: #ffffff;
+    border-radius: 0 10px 0 0;
+}
+
+#location-information-box > ul > li > svg {
+    margin-left: 10px;
+}
+
+/* style of location content */
+#location-content-div {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+}
+
+/* style of right side of location section */
+#location-content-div > a {
+    width: 33.33%;
+}
+
+#location-content-div > a > img {
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* style of location explanation that is right part of location section */
+#location-explanation-div {
+    width: 66.66%;
+    padding-left: 15px;
+    padding-right: 1.5rem;
+}
+
+#location-explanation-div h4 {
+    color: #3b4157;
+    margin-top: 0;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+    font-size: 14px;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+#location-explanation-div p {
+    line-height: 30px;
+    font-size: 14px;
+    margin-bottom: .5rem;
+}
+
+#location-explanation-div span {
+    color: #3b4157;
+    font-size: small;
+}
+
+#free-days-week {
+    padding: 10px;
+    display: none;
+}
+
+#free-days-week > h4 {
+    font-size: 16px;
+    color: #3b4157;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+}
+
+#week-days {
+    display: flex;
+    padding: .5rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#week-days div {
+    font-size: 14px;
+    text-align: center;
+    padding: 1rem 5px;
+    margin-bottom: 1rem;
+    width: 11.5%;
+}
+
+#week-days div:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.not-selected-day-svg {
+    color: #fb815e;
+    display: none;
+}
+
+.selected-day-svg {
+    color: #4dcc6b;
+    display: none;
+}

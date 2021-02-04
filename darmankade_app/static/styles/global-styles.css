@@ -1,0 +1,134 @@
+/* ----------------------------------------------------------------------- */
+/* next 5 blocks define the style of typical buttons used in this websites */
+.our-btn
+{
+    padding: 5px;
+    height: 40px;
+    display: flex;
+    border-radius: 10px;
+    background-color: #fb815e;
+    cursor: pointer;
+}
+.our-btn:hover
+{
+    background-color: #fa6439;
+}
+.our-btn > .our-btn-icon
+{
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.our-btn-icon > svg, .our-btn-icon > img
+{
+    width: 70%;
+    height: auto;
+}
+.our-btn p
+{
+    color: #fff;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    font-size: 120%;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Other styles */
+
+*
+{
+    direction: rtl;
+    font-family: 'Shabnam', 'B Nazanin';
+}
+body, a, div, button
+{
+    font-size: 97%;
+}
+body
+{
+    margin: 0px;
+}
+.flex-flow
+{
+    display: flex;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Other global styles */
+
+.w-80 /* sets the width of a block element to 80% */
+{
+    width: 80%;
+}
+.w-90 /* sets the width of a block element to 90% */
+{
+    width: 90%;
+}
+.w-95 /* sets the width of a block element to 95% */
+{
+    width: 95%;
+}
+
+.cur-pointer /* set cursor shape to pointer */
+{
+    cursor: pointer;
+}
+
+.rounded-10px /* round the corners by 10px */
+{
+    border-radius: 10px;
+}
+.rounded-25px /* round the corners by 25px */
+{
+    border-radius: 25px;
+}
+
+.text-12 /* set font size to 12px */
+{
+    font-size: 12px;
+}
+
+.font-120 /* set font size to 120% */
+{
+    font-size: 120%;
+}
+.font-110 /* set font size to 110% */
+{
+    font-size: 110%;
+}
+.font-140
+{
+    font-size: 140%;
+}
+
+.our-bg-gray /* gray color for background */
+{
+    background-color: #fafafa;
+}
+.our-bg-dark /* dark color for background */
+{
+    background-color: #ccc;
+}
+.our-bg-green /* dark green for background */
+{
+    background-color: #e5f2fe;
+}
+.our-bg-btn
+{
+    background-color: rgb(251, 129, 94);
+}
+
+.our-text-lightgreen /* light color for text color */
+{
+    color: rgb(77, 204, 107);
+}
+
+.no-outline /* remove outline from elements */
+{
+    outline: none;
+}

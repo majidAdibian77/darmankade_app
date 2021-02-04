@@ -1,0 +1,689 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <!-- icon in title bar-->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <!-- css styles are imported in this section -->
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main-content.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/comments.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/special-services.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/app-download.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+    <!-- Shabnam font style -->
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+
+    <title>درمانکده - مشاوره آنلاین و ویزیت حضوری - آزمایش در محل</title>
+
+</head>
+
+<body class="general-settings">
+
+<!-- menu section on the top of the page -->
+<header id="main-header">
+    <div id="header-container" class="flex-flow">
+
+        <!-- website logo-->
+        <div id="logo-container">
+            <a href=""><img src="{% static 'images/logo.svg' %}"></a>
+        </div>
+
+        <!-- menu container -->
+        <div id="menu" class="flex-flow">
+
+            <!-- first menu item and its drop down content -->
+            <div class="menu-item dr">
+
+                <!-- menu item-->
+                <a href="" class="dr-link">
+                    <!-- menu item icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="menu-icon" data-v-49015c94="">
+                        <line x1="21" y1="10" x2="3" y2="10" data-v-49015c94=""></line>
+                        <line x1="21" y1="6" x2="3" y2="6" data-v-49015c94=""></line>
+                        <line x1="21" y1="14" x2="3" y2="14" data-v-49015c94=""></line>
+                        <line x1="21" y1="18" x2="3" y2="18" data-v-49015c94=""></line>
+                    </svg>
+                    <!-- menu item title-->
+                    لیست تخصص ها
+                </a>
+
+                <!-- menu item drop down -->
+                <div class="dr-content">
+                    <div class="flex-flow">
+
+                        <!-- list of specialties in drop down list -->
+                        <div class="drop-down-list">
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/c825bc8.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    گوارش، کبد و آندوسکوپی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/d25b940.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    پوست و مو
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/download.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    غدد و متابولیسم
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/33fe84f.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    روماتولوزی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/09709b8.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    گوش، حلق و بینی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/4e329ca.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    جراحی مغز و اعصاب
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/42073bf.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    مغز و اعصاب
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/6deb567.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    روانپزشکی (اعصاب و روان)
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/0fa4e19.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    خون و آنکولوژی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/bbb08de.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    ارتوپدی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/4b862e5.svg' %}" class="spec-icon"/>
+                                <div class="spec-text">
+                                    زنان و زایمان
+                                </div>
+                            </a>
+                            <button class="dr-btn flex-flow">
+                                <div class="dr-btn-text">
+                                    سایر تخصص ها
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="dr-btn-icon">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="banner-container">
+                            <img src="{% static 'images/specialties/8d6a3eb.png' %}" class='banner'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second menu item and its drop down content -->
+            <div class="menu-item dr">
+                <a href="" class="dr-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="menu-icon" data-v-49015c94="">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0" data-v-49015c94=""></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0" data-v-49015c94=""></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" data-v-49015c94=""></path>
+                        <line x1="12" y1="20" x2="12" y2="20" data-v-49015c94=""></line>
+                    </svg>
+                    مشاوره آنلاین</a>
+                <div class="dr-content">
+                    <div class="flex-flow">
+                        <div class="drop-down-list">
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/bbb0bf5.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    روانشناس
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/0702cf7.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    روان پزشک (اعصاب و روان)
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/6435869.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    زنان، زایمان و نازایی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/3a03010.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    بیماری های عفونی و تب دار
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/download.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    غدد و متابولیسم
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/d25b940.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    پوست و مو
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/cd328c4.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    گوارش، کبد و آندوسکوچی
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/f03344c.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    کلیه و مجاری ادراری (اورولوژی)
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/6ebe09c.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    کودکان
+                                </div>
+                            </a>
+                            <a href="" class="grid-item flex-flow">
+                                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/online-consulting/09709b8.svg" class="spec-icon"/>
+                                <div class="spec-text">
+                                    گوش و حلق و بینی
+                                </div>
+                            </a>
+                            <button class="dr-btn flex-flow">
+                                <div class="dr-btn-text">
+                                    مشاوره آنلاین فوری
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="dr-btn-icon">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button class="dr-btn flex-flow">
+                                <div class="dr-btn-text">
+                                    مشاهده همه
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="dr-btn-icon">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="banner-container">
+                            <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/online-consulting/1d6b04b.png" class='banner'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third menu item (no drop down) -->
+            <div class="menu-item">
+                <a href="" class="menu-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="menu-icon" data-v-49015c94="">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" data-v-49015c94=""></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" data-v-49015c94="">
+                        </path>
+                    </svg>
+                    مجله پزشکی</a>
+            </div>
+
+            <!-- 4th menu item (no drop down) -->
+            <div class="menu-item">
+                <a href="" class="menu-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="menu-icon" data-v-49015c94="">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" data-v-49015c94=""></path>
+                        <circle cx="8.5" cy="7" r="4" data-v-49015c94=""></circle>
+                        <line x1="20" y1="8" x2="20" y2="14" data-v-49015c94=""></line>
+                        <line x1="23" y1="11" x2="17" y2="11" data-v-49015c94=""></line>
+                    </svg>
+                    عضویت پزشکان</a>
+            </div>
+
+            <!-- 5th menu item (no drop down) -->
+            <div class="menu-item">
+                <a href="" class="menu-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="menu-icon" data-v-49015c94="">
+                        <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                data-v-49015c94=""></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" data-v-49015c94=""></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12" data-v-49015c94=""></line>
+                    </svg>
+                    کرونا سازمانی</a>
+            </div>
+        </div>
+
+        <div id="login-box" class="flex-flow">
+            <a href="./login.html" id="login-button" class='flex-flow'>
+                ورود
+                <svg data-v-0fb0a4cb="" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path data-v-0fb0a4cb="" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline data-v-0fb0a4cb="" points="10 17 15 12 10 7"></polyline>
+                    <line data-v-0fb0a4cb="" x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- search box and best specialties panel -->
+<div id="main-content">
+
+    <!-- search box -->
+    <div id="search-box">
+
+        <!-- title of search box -->
+        <h1 id="search-title">درمانکده - مشاوره آنلاین و حضوری</h1>
+
+        <!-- search bar containing text box, city names and search button -->
+        <div id="search-bar">
+
+            <!-- input box -->
+            <input type="text" placeholder="نام پزشک، تخصص، یا محله مورد نظر را جستجو کنید"/>
+
+            <!-- city names-->
+            <div class="flex-flow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="city-1">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div id="city-2">تهران</div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     id="city-3">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+
+            <!-- search button -->
+            <button id="search-button">جستجو</button>
+        </div>
+    </div>
+
+    <!-- best specialties container -->
+    <div id="best-specialties">
+
+        <!-- best specialties title -->
+        <div id="bs-title">
+            <div class="bs-title-1">بهترین تخصص های درمانکده</div>
+            <div class="bs-title-2 flex-flow">
+                مشاهده همه
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-b9c9f9e8="">
+                    <polyline points="15 18 9 12 15 6" data-v-b9c9f9e8=""></polyline>
+                </svg>
+            </div>
+        </div>
+
+        <!-- best specialties list of items -->
+        <div id="bs-list" class="flex-flow">
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(232, 201, 253);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/d3ab6b5.png"/>
+                </div>
+                <div class="spec-box-text">ارتوپدی</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(252, 186, 186);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/850cd3d.png"/>
+                </div>
+                <div class="spec-box-text">اورولوژی</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(179, 232, 202);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/8a932a4.png"/>
+                </div>
+                <div class="spec-box-text">پوست و مو</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(171, 194, 216);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/171ea81.png"/>
+                </div>
+                <div class="spec-box-text">زنان و زایمان</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(251, 203, 238);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/f05550d.png"/>
+                </div>
+                <div class="spec-box-text">داخلی</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(197, 255, 251);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/e125f7c.png"/>
+                </div>
+                <div class="spec-box-text">گوش، حلق و بینی</div>
+            </div>
+            <div class='spec-box'>
+                <div class="spec-box-image" style="background-color: rgb(253, 205, 176);">
+                    <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/best-specs/838522d.png"/>
+                </div>
+                <div class="spec-box-text">مغز و اعصاب</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- comment section -->
+<div id="comments" class="flex-flow">
+
+    <!-- right side of comment section -->
+    <div id="description">
+        <h1>نظرات و روند درمان بیماری ها</h1>
+        <p>.شما می توانید تجربه مراجعه کاربران دیگر به پزشکان را بخوانید و از علت مراجعه سایر بیماران و روند درمانی آن
+            ها آگاهی بیابید</p>
+    </div>
+
+    <!-- left side of comment section -->
+    <div id="comment-box">
+
+        <!-- person picture -->
+        <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/comments/qoutes.png"/>
+
+        <!-- main box of comments-->
+        <div id="main-comment-box">
+            <div id="comment-text">عالی، خیلی دقیق به گفتار بیمار گوش میده و نظر و طبابتش عالی ممنون از دکتر</div>
+            <div id="comment-info" class="flex-flow">
+                <img src="{% static 'images/specialties/8d6a3eb.png' %}images/comments/dr.png" width="20px">
+                <div>
+                    <strong>دکتر محمد کاظم امامی مبیدی</strong>
+                    <div>متخصص ارتوپدی</div>
+                </div>
+                <button>مشاعده سایر نظرات</button>
+            </div>
+        </div>
+
+        <!-- mark and text below main comment box -->
+        <div id="mark-text">
+            <div id="mark"></div>
+            <div id="under-mark">نظر علی</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- special services section -->
+<div id="special-services">
+
+    <!-- title -->
+    <h1>نگران کرونا نباشید</h1>
+
+    <!-- lower panel -->
+    <div class="flex-flow">
+
+        <!-- first special service item -->
+        <div class="service-item">
+
+            <!-- image of service -->
+            <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/special-services/994ebdc.png"/>
+
+            <!-- title of service -->
+            <div class="service-title">تست PCR و آنتی بادی در محل</div>
+
+            <!-- service description -->
+            <p>اگر در شهر های تهران، مشهد، اصفهان، کرج، شیراز و اهواز هستید، می توانید بدون مراجعه به آزمایشگاه و در محل
+                مورد نظر خود آزمایش کرونا بدهید.</p>
+
+            <!-- continue button -->
+            <button class="service-button flex-flow">
+                <div>درخواست آزمایش
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-chevron-left"
+                         data-v-b9c9f9e8="">
+                        <polyline points="15 18 9 12 15 6" data-v-b9c9f9e8=""></polyline>
+                    </svg>
+                </div>
+            </button>
+
+        </div>
+
+        <!-- second special service item -->
+        <div class="service-item">
+
+            <!-- image of service -->
+            <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/special-services/4126cda.png"/>
+
+            <!-- title of service -->
+            <div class="service-title">مشاوره آنلاین فوری</div>
+
+            <!-- service description -->
+            <p>با تست آنلاین کرونا علائم خود را بررسی کنید و اگر مشکوک بودید میتوانید به صورت فوری با پزشکان عمومی
+                مشاوره آنلاین داشته
+                باشید.</p>
+
+            <!-- continue button -->
+            <button class="service-button flex-flow">
+                <div>دریافت مشاوره فوری
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-chevron-left"
+                         data-v-b9c9f9e8="">
+                        <polyline points="15 18 9 12 15 6" data-v-b9c9f9e8=""></polyline>
+                    </svg>
+                </div>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- app download section -->
+<div id="app-download">
+    <div class="flex-flow">
+
+        <!-- picture and icons of app download-->
+        <div id="app-download-picture">
+            <img src="{% static 'images/specialties/8d6a3eb.png' %}./images/application-dl/6177b76.png"/>
+            <div id="store-panel">
+                <div class="flex-flow">
+                    <img src="{% static 'images/application-dl/0a657d6.png' %}"/>
+                    <img src="{% static 'images/application-dl/download.png' %}"/>
+                    <img src="{% static 'images/application-dl/aa22ae4.png' %}"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- description and get link section -->
+        <div id="app-download-description">
+
+            <!-- text -->
+            <h2>دانلود اپلیکیشن درمانکده</h2>
+            <p>با اپلیکیشن درمانکده با پزشکان و روانشناسان آنلاین مشاوره کنید یا برای ویزیت حضوری آنلاین نوبت
+                بگیرید.</p>
+            <h3>برای دریافت لینک، شماره موبایل خود را وارد کنید</h3>
+
+            <!-- get link panel -->
+            <div id="phone-num" class="flex-flow">
+
+                <input type="text" placeholder="مانند **** *** 0912"/>
+
+                <!-- button -->
+                <div class="btn-wrapper">
+                    <div class="our-btn">
+                        <div class='our-btn-icon' style="padding-right: 0px !important;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-v-bc20ae4e="">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" data-v-bc20ae4e=""></rect>
+                                <line x1="12" y1="18" x2="12" y2="18" data-v-bc20ae4e=""></line>
+                            </svg>
+                        </div>
+                        <p style="margin-left: 10px;">ارسال لینک</p>
+                    </div>
+                    <div style="position: relative;">
+                        <div class='get-link-effect'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- the structure of footer -->
+<div id="footer">
+    <div id="footer-top">
+        <!-- The top section of the footer containing logo and text below it -->
+        <div id=footer-top-container>
+
+            <!-- footer logo and text below it-->
+            <img src="{% static 'images/footer/7bbb5c4.svg' %}">
+            <p>درمانکده، ارائه دهنده خدمات آنلاین سلامت</p>
+            <p>(نوبت گیری اینترنتی، مشاوره آنلاین، آزمایش در محل و ...)</p>
+
+            <!-- contact us section in footer -->
+            <div id="middle-section" class="flex-flow">
+                <div class="contact-links">
+                    <div>درباره درمانکده</div>
+                    <div>تماس با ما</div>
+                    <div>مجله پزشکی</div>
+                </div>
+
+                <!-- contact us on instagram, twitter and linked in -->
+                <div id="social-medias" class="flex-flow">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-1c02d2dc="">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" data-v-1c02d2dc=""></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" data-v-1c02d2dc=""></path>
+                            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" data-v-1c02d2dc=""></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-1c02d2dc="">
+                            <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                                    data-v-1c02d2dc=""></path>
+                        </svg>
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-1c02d2dc="">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                                  data-v-1c02d2dc=""></path>
+                            <rect x="2" y="9" width="4" height="12" data-v-1c02d2dc=""></rect>
+                            <circle cx="4" cy="4" r="2" data-v-1c02d2dc=""></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="contact-links">
+                    <div>سوالات متداول</div>
+                    <div>قوانین و مقررات</div>
+                    <div>شکایت</div>
+                </div>
+            </div>
+
+            <p>با ثبت نام در خبرنامه درمانکده، اولین نفری باشید که از جدیدترین</p>
+            <p>خبرها، جشنواره ها و تخفیف های ویژه ما مطلع شوید.</p>
+
+            <!-- subscription sectino -->
+            <div id="subscribe">
+
+                <!-- first and last name textboxes-->
+                <div id="subscribe-name">
+                    <input type="text" placeholder="نام"/>
+                    <input type="text" placeholder="نام خانوادگی"/>
+                </div>
+
+                <!-- email textbox -->
+                <input type="text" placeholder="ایمیل"/>
+
+                <!-- button -->
+                <div class="btn-wrapper">
+                    <div class="our-btn">
+                        <div class='our-btn-icon'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-v-bc20ae4e="">
+                                <line x1="19" y1="12" x2="5" y2="12" data-v-bc20ae4e=""></line>
+                                <polyline points="12 19 5 12 12 5" data-v-bc20ae4e=""></polyline>
+                            </svg>
+                        </div>
+                        <p>عضو می شوم</p>
+                    </div>
+                    <div style="position: relative;">
+                        <div class='subscribe-effect'></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- images below subscription button -->
+            <div id="footer-contact" class="flex-flow">
+                <div><img src="{% static 'images/footer/logo.png' %}"></div>
+                <div><img src="{% static 'images/footer/logo (1).png' %}"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- the lower section of the footer -->
+    <div id="footer-bottom">
+        <div id="property-right">تمامی حقوق این سایت برای درمانکده محفوظ است</div>
+        <div class="flex-flow">
+            <div>طراحی شده با</div>
+            <!-- heart icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="svg-fill-red feather feather-heart"
+                 data-v-1c02d2dc="">
+                <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                        data-v-1c02d2dc=""></path>
+            </svg>
+            <div>توسط تیم درمانکده</div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

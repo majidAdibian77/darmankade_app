@@ -1,0 +1,183 @@
+/* ----------------------------------------------------------------------- */
+/* footer styles */
+
+#footer-top /* container of top section of footer */
+{
+    background-color: rgb(23, 128, 223);
+    width: 100%;
+    padding-top: 20px;
+}
+#footer-top-container /* container of footer top section */
+{
+    width: 80%;
+    margin: auto;
+}
+#footer-top-container > img /* footer logo */
+{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#footer-top-container > p /* footer text under logo */
+{
+    text-align: center;
+    color: #fff;
+}
+#middle-section /* container of contact us section in footer */
+{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.contact-links /* contanier of contact us links */
+{
+    width: 20%;
+    padding: 10px;
+    padding-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/* the next two blocks define how each link looks like and how it changes when pointed on it */
+.contact-links > div
+{
+    color: #fff;
+    padding: 10px;
+    border-top: 1px #fff solid; 
+    text-align: center;
+    font-weight: 900;
+    cursor: pointer;
+}
+.contact-links > div:hover
+{
+    color: rgb(23, 128, 223);
+    background-color: #fff;
+}
+#social-medias /* box containing instagram, twitter and linked in icons */
+{
+    width: 60%;
+    color: #fff;
+}
+#social-medias > div /* box containing one icon */
+{
+    width: 33%;
+}
+#social-medias svg /* one of insta, twitter and linked in icons */
+{
+    display: block;
+    width: 15%;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+}
+.vertical-line /* draws a vertical line */
+{
+    display: inline-block;
+    width: 50%;
+    height: 150px;
+    border-left: 2px #fff solid;
+    margin-top: 30px;
+}
+#subscribe /* subscription panel */
+{
+    display: grid;
+    width: 30%;
+    margin: auto;
+}
+#subscribe-name /* firstname and lastname box */
+{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#subscribe input /* subscription text boxes */
+{
+    height: 40px;
+    padding-right: 10px;
+    margin: 2px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px rgb(206, 212, 218) solid;
+}
+#subscribe > input /* to put space between textboxes and button */
+{
+    margin-bottom: 10px;
+}
+/* next 3 define animation on subscription button */
+@keyframes subscribe-anim
+{
+    0%   {width: 60px; border-radius: 20px 10px 10px 20px;}
+    100% {width: 364px; border-radius: 10px;}
+}
+.subscribe-effect
+{
+    position: absolute;
+    top: -50px;
+    width: 60px;
+    height: 50px;
+    background-color:#fff;
+    opacity: 20%;
+    border-radius: 20px 10px 10px 20px;
+    cursor: pointer;
+}
+.btn-wrapper:hover .subscribe-effect
+{
+    animation-name: subscribe-anim;
+    animation-duration: 0.5s;
+    width: 365px;
+    border-radius: 10px;
+}
+/* next 3 blocks define logos after subscription button */
+#footer-contact
+{
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+}
+#footer-contact > div
+{
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#footer-contact > div > img
+{
+    width: 100px;
+    height: auto;
+}
+/* bottom part of footer */
+#footer-bottom /* bottom-footer contanier */
+{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 50px;
+    color: rgb(59, 65, 87);
+} 
+#property-right /* property right text */
+{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    width: fit-content;
+}
+#property-right + div /* love text */
+{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: fit-content;
+    text-align: right;
+}
+#property-right + div > div /* text around heart */
+{
+    padding-top: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+#property-right + div svg /* heart svg */
+{
+    fill: red;
+    color: #fff;
+}

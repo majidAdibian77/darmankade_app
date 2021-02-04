@@ -1,0 +1,117 @@
+#welcome /* right panel with blue background */
+{
+    width: 35%;
+    background-color: #1780df;
+    align-items: center;
+}
+
+#welcome > div /* logo and text container in right panel */
+{
+    width: 80%;
+    margin: auto;
+}
+
+#welcome > div > img /* logo of website */
+{
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#welcome > div > h2 /* welcome text */
+{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#welcome > div > h3 /* text below welcome */
+{
+    text-align: center;
+    color: #fff;
+}
+
+#form /* left panel that contains login form */
+{
+    width: 70%;
+    display: flex;
+}
+
+#form > div /* form container */
+{
+    width: 45%;
+    margin: auto;
+    align-items: center;
+}
+
+#form > div > p /* title of login form */
+{
+    text-align: center;
+    font-size: 120%;
+    color: rgb(96, 101, 119)
+}
+
+#form > div > span /* textbox title */
+{
+    position: absolute;
+    top: 74px;
+    right: 20px;
+    display: block;
+    color: rgb(110, 119, 148);
+    background-color: #fff;
+    width: fit-content;
+    padding: 5px;
+}
+
+#form > div > input /* mobile number textbox */
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px rgb(205, 205, 205) solid;
+    padding-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#form > div > input:focus /* mobile number textbox when focused */
+{
+    border: 2px rgb(23, 128, 223) solid;
+}
+
+#get-code-btn /* get code button container */
+{
+    background-color: rgb(251, 129, 94);
+    height: 50px;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#get-code-btn > div /* text inside get code button */
+{
+    margin-left: 5px;
+    margin-right: 170px;
+    font-size: 120%;
+}
+#introducer-btn /* introducer button */
+{
+    width: 30%;
+    margin: auto;
+    border: 1px rgb(251, 129, 94) solid;
+    border-radius: 10px;
+    text-align: center;
+    height: 35px;
+    padding-top: 12px;
+    color: rgb(251, 129, 94);
+    cursor: pointer;
+    font-size: 110%;
+}
+#introducer-btn:hover /* style of button when hovering on it */
+{
+    color: #fff;
+    background-color: rgb(251, 129, 94);
+}
