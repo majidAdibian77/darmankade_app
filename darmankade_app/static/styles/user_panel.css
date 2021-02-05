@@ -1,0 +1,21 @@
+#user-panel-div /* left panel that contains login form */
+{
+    width: 30%;
+    margin: auto;
+    border: 1px inset #f38e35;
+    padding: 4%;
+    border-radius: 10px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*text-align: right;*/
+}
+.user-panel-item{
+    width: 100%;
+    border: 1px solid darkred;
+    margin: 1%;
+    padding: 2%;
+}
+#user-panel-div>a{
+    width: 100%;
+}

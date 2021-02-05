@@ -6,8 +6,11 @@
     <!-- icon in title bar-->
     <link rel="icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/forms.css' %}">
     <!-- Shabnam font style -->
     <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 </head>
 
 <body class="flex-flow">
@@ -17,52 +20,36 @@
 
     <form method="POST">
         {% csrf_token %}
-
-        <label for="{{ form.phone_number.id_for_label }}">شماره همراه<span
+        <label for="{{ user_form.username.id_for_label }}">نام کاربری<span
                 class="text-danger">*</span></label>
-        {{ form.phone_number }}
-        {% for err in form.phone_number.errors %}
-            <span class="text-danger d-inline">{{ err }}</span>
-        {% endfor %}
-        <br>
-
-
-        <label for="{{ form.username.id_for_label }}">نام کاربری<span
-                class="text-danger">*</span></label>
-        {{ form.username }}
-        {% for err in form.username.errors %}
+        {{ user_form.username }}
+        {% for err in user_form.username.errors %}
             <span class="text-danger d-inline">{{ err }}</span>
         {% endfor %}
         <br>
 
         <div class="row">
             <div class="col-md-6">
-                <label for="{{ form.password1.id_for_label }}">رمز عبور<span
+                <label for="{{ user_form.password1.id_for_label }}">رمز عبور<span
                         class="text-danger">*</span></label>
-                {{ form.password1 }}
-                {% for err in form.password1.errors %}
+                {{ user_form.password1 }}
+                {% for err in user_form.password1.errors %}
                     <span class="text-danger d-inline">{{ err }}</span>
                 {% endfor %}
                 <br>
 
             </div>
             <div class="col-md-6">
-                <label for="{{ form.password2.id_for_label }}">تکرار رمز عبور<span
+                <label for="{{ user_form.password2.id_for_label }}">تکرار رمز عبور<span
                         class="text-danger">*</span></label>
-                {{ form.password2 }}
-                {% for err in form.password2.errors %}
+                {{ user_form.password2 }}
+                {% for err in user_form.password2.errors %}
                     <span class="text-danger d-inline">{{ err }}</span>
                 {% endfor %}
                 <br>
             </div>
         </div>
-
-        <button class="btn btn-block btn-success" type="submit">ثبت نام</button>
-        <hr>
-        <a href="{% url 'patient_login' %}">
-            <button type="button" class="btn btn-block btn-primary">صفحه ی ورود</button>
-        </a>
-
+        <button class="btn btn-block btn-success" type="submit">ورود</button>
     </form>
 </div>
 </body>

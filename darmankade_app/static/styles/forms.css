@@ -11,7 +11,7 @@
 
 #form > form /* form container */
 {
-    width: 30%;
+    width: 35%;
     margin: auto;
     align-items: center;
     border: 1px inset #f38e35;
@@ -42,7 +42,7 @@ border: 2px rgb(23, 128, 223) solid;
     font-size: small;
 }
 
-#form button {
+#form button, #form a {
 width: 100%;
 border-radius: 10px;
     padding: 1%;

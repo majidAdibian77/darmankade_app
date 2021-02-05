@@ -1,25 +1,25 @@
 <html>
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <!-- title icon -->
-    <link rel="icon" href="./images/favicon.ico">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
 
     <!-- page title -->
     <title>بهترین پزشکان متخصص مغز و اعصاب (نورولوژی) در تهران</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="styles/global-styles.css">
-    <link rel="stylesheet" href="styles/font.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/neurologist.css">
-    <link rel="stylesheet" href="styles/special-services.css">
-    <link rel="stylesheet" href="styles/app-download.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/medical_specialities.css">
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/neurologist.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/special-services.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/app-download.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/medical_specialities.css' %}">
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 </head>
 
 <body class="bg-light">
@@ -30,7 +30,7 @@
 
         <!-- website logo-->
         <div id="logo-container">
-            <a href=""><img src="./images/logo.svg"></a>
+            <a href=""><img src="{% static 'images/logo.svg' %}"></a>
         </div>
 
         <!-- menu container -->
@@ -61,67 +61,67 @@
                         <!-- list of specialties in drop down list -->
                         <div class="drop-down-list">
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/c825bc8.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/c825bc8.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     گوارش، کبد و آندوسکوپی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/d25b940.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/d25b940.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     پوست و مو
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/download.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/download.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     غدد و متابولیسم
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/33fe84f.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/33fe84f.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     روماتولوزی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/09709b8.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/09709b8.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     گوش، حلق و بینی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/4e329ca.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/4e329ca.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     جراحی مغز و اعصاب
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/42073bf.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/42073bf.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     مغز و اعصاب
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/6deb567.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/6deb567.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     روانپزشکی (اعصاب و روان)
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/0fa4e19.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/0fa4e19.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     خون و آنکولوژی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/bbb08de.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/bbb08de.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     ارتوپدی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/specialties/4b862e5.svg" class="spec-icon"/>
+                                <img src="{% static 'images/specialties/4b862e5.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     زنان و زایمان
                                 </div>
@@ -138,7 +138,7 @@
                             </button>
                         </div>
                         <div class="banner-container">
-                            <img src="./images/specialties/8d6a3eb.png" class='banner'/>
+                            <img src="{% static 'images/specialties/8d6a3eb.png' %}" class='banner'/>
                         </div>
                     </div>
                 </div>
@@ -160,61 +160,61 @@
                     <div class="flex-flow">
                         <div class="drop-down-list">
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/bbb0bf5.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/bbb0bf5.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     روانشناس
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/0702cf7.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/0702cf7.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     روان پزشک (اعصاب و روان)
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/6435869.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/6435869.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     زنان، زایمان و نازایی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/3a03010.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/3a03010.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     بیماری های عفونی و تب دار
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/download.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/download.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     غدد و متابولیسم
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/d25b940.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/d25b940.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     پوست و مو
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/cd328c4.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/cd328c4.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     گوارش، کبد و آندوسکوچی
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/f03344c.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/f03344c.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     کلیه و مجاری ادراری (اورولوژی)
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/6ebe09c.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/6ebe09c.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     کودکان
                                 </div>
                             </a>
                             <a href="" class="grid-item flex-flow">
-                                <img src="images/online-consulting/09709b8.svg" class="spec-icon"/>
+                                <img src="{% static 'images/online-consulting/09709b8.svg' %}" class="spec-icon"/>
                                 <div class="spec-text">
                                     گوش و حلق و بینی
                                 </div>
@@ -241,7 +241,7 @@
                             </button>
                         </div>
                         <div class="banner-container">
-                            <img src="./images/online-consulting/1d6b04b.png" class='banner'/>
+                            <img src="{% static 'images/online-consulting/1d6b04b.png' %}" class='banner'/>
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@
         <div class="col-3 p-0 ps-3">
             <!-- top image in sidebar-->
             <div class="mb-3">
-                <img src="./images/neurologist/0996fbf.png" alt="" class="w-100 h-auto">
+                <img src="{% static 'images/neurologist/0996fbf.png' %}" alt="" class="w-100 h-auto">
             </div>
 
             <!-- search box -->
@@ -717,7 +717,7 @@
                 <div class="row">
                     <!-- doctor's picture -->
                     <div class="col-2">
-                        <img src="./images/neurologist/131899428573066339دکتر-مهران-جلالی.jpg" class="w-80 h-auto">
+                        <img src="{% static 'images/neurologist/131899428573066339دکتر-مهران-جلالی.jpg' %}" class="w-80 h-auto">
                     </div>
                     <!-- doctor name and comments-->
                     <div class="col-6">
@@ -994,7 +994,7 @@
         <div class="service-item">
 
             <!-- image of service -->
-            <img src="./images/special-services/994ebdc.png"/>
+            <img src="{% static 'images/special-services/994ebdc.pn' %}g"/>
 
             <!-- title of service -->
             <div class="service-title">تست PCR و آنتی بادی در محل</div>
@@ -1020,7 +1020,7 @@
         <div class="service-item">
 
             <!-- image of service -->
-            <img src="./images/special-services/4126cda.png"/>
+            <img src="{% static 'images/special-services/4126cda.png' %}"/>
 
             <!-- title of service -->
             <div class="service-title">مشاوره آنلاین فوری</div>
@@ -1052,12 +1052,12 @@
 
         <!-- picture and icons of app download-->
         <div id="app-download-picture">
-            <img src="./images/application-dl/6177b76.png"/>
+            <img src="{% static 'images/application-dl/6177b76.png' %}"/>
             <div id="store-panel">
                 <div class="flex-flow">
-                    <img src="./images/application-dl/0a657d6.png"/>
-                    <img src="./images/application-dl/download.png"/>
-                    <img src="./images/application-dl/aa22ae4.png"/>
+                    <img src="{% static 'images/application-dl/0a657d6.png' %}"/>
+                    <img src="{% static 'images/application-dl/download.png' %}"/>
+                    <img src="{% static 'images/application-dl/aa22ae4.png' %}"/>
                 </div>
             </div>
         </div>
@@ -1101,7 +1101,7 @@
 <div id="footer-container">
     <div id="footer-right" class="padding-left-right-15px">
         <a>
-            <img src="images/footer/7bbb5c4.svg">
+            <img src="{% static 'images/footer/7bbb5c4.svg' %}">
         </a>
         <p class="pt-3">درمانکده، ارائه دهنده خدمات آنلاین سلامت (نوبت گیری اینترنتی، مشاوره آنلاین، آزمایش در محل و
             ...)</p>
@@ -1122,8 +1122,8 @@
 
     <div id="footer-left" class="padding-left-right-15px">
         <div>
-            <img src="images/footer/logo.png">
-            <img src="images/footer/logo%20(1).png">
+            <img src="{% static 'images/footer/logo.png' %}">
+            <img src="{% static 'images/footer/logo%20(1).png' %}">
         </div>
         <ul class="ps-3 pe-3">
             <li>
@@ -1183,7 +1183,7 @@
 </div>
 
 <!-- bootstrap scripts -->
-<script src="bootstrap/bootstrap.bundle.min.js"></script>
-<script src="./js/neurologist.js"></script>
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/neurologist.js' %}"></script>
 </body>
 </html>

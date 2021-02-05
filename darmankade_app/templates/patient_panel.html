@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ورود</title>
+    <!-- icon in title bar-->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/user_panel.css' %}">
+    <!-- Shabnam font style -->
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 </head>
-<body>
 
+<body class="flex-flow">
+
+<!-- left side panel with login form -->
+<div id="user-panel-div">
+    <h2>اطلاعات کاربری</h2>
+    <div class="user-panel-item">نام کاربری: {{ user.username }}</div>
+    <div class="user-panel-item">شماره همراه: {{ user.patient.phone_number }}</div>
+    {#    <div class="user-panel-item">نام کاربری: {{ user.username }}</div>#}
+    {#    <div class="user-panel-item">نام کاربری: {{ user.username }}</div>#}
+    <a class="btn btn-danger" href="{% url 'patient_change_infos' %}">تغییر اطلاعات</a>
+</div>
 </body>
 </html>
