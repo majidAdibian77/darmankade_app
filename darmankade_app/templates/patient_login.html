@@ -28,27 +28,33 @@
         {% endfor %}
         <br>
 
-        <div class="row">
-            <div class="col-md-6">
-                <label for="{{ user_form.password1.id_for_label }}">رمز عبور<span
-                        class="text-danger">*</span></label>
-                {{ user_form.password1 }}
-                {% for err in user_form.password1.errors %}
-                    <span class="text-danger d-inline">{{ err }}</span>
-                {% endfor %}
-                <br>
-
-            </div>
-            <div class="col-md-6">
-                <label for="{{ user_form.password2.id_for_label }}">تکرار رمز عبور<span
-                        class="text-danger">*</span></label>
-                {{ user_form.password2 }}
-                {% for err in user_form.password2.errors %}
-                    <span class="text-danger d-inline">{{ err }}</span>
-                {% endfor %}
-                <br>
-            </div>
-        </div>
+        <label for="{{ user_form.password1.id_for_label }}">رمز عبور<span
+                class="text-danger">*</span></label>
+        {{ user_form.password1 }}
+        {% for err in user_form.password1.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+        {#        <div class="row">#}
+        {#            <div class="col-md-6">#}
+        {#                <label for="{{ user_form.password1.id_for_label }}">رمز عبور<span#}
+        {#                        class="text-danger">*</span></label>#}
+        {#                {{ user_form.password1 }}#}
+        {#                {% for err in user_form.password1.errors %}#}
+        {#                    <span class="text-danger d-inline">{{ err }}</span>#}
+        {#                {% endfor %}#}
+        {#                <br>#}
+        {#            </div>#}
+        {#            <div class="col-md-6">#}
+        {#                <label for="{{ user_form.password2.id_for_label }}">تکرار رمز عبور<span#}
+        {#                        class="text-danger">*</span></label>#}
+        {#                {{ user_form.password2 }}#}
+        {#                {% for err in user_form.password2.errors %}#}
+        {#                    <span class="text-danger d-inline">{{ err }}</span>#}
+        {#                {% endfor %}#}
+        {#                <br>#}
+        {#            </div>#}
+        {#        </div>#}
         <button class="btn btn-block btn-success" type="submit">ورود</button>
     </form>
 </div>

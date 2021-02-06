@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from darmankade_app.forms import PatientForm, UserForm, DoctorForm
-from darmankade_app.models import Patient
+from darmankade_app.models import Patient, User
 
 
 def home(request):
@@ -37,24 +37,37 @@ def patient_register(request):
 def patient_login(request):
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
-        patient_form = PatientForm(data=request.POST)
-        if patient_form.is_valid() and user_form.is_valid():
-            user = user_form.save()
-            patient = patient_form.save(commit=False)
-            patient.user = user
-            patient.save()
-
-            # print('patient saved')
-            # auth_user = authenticate(username=user.username,
-            #                          password=user.password)
+        username = request.POST.get("username")
+        password = request.POST.get("password1")
+        user = authenticate(username=username, password=password)
+        if user:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect('patient_panel')
+        else:
+            if 'username' in user_form.errors.keys():
+                del user_form.errors['username']
+            user_form.add_error('username', 'username or password is not correct!')
+        # username = user_form.cleaned_data.get('username')
+        # print(user_form.errors)
+        # if 'username' in user_form.errors.keys():
+        #     del user_form.errors['username']
+        # if user_form.is_valid():
+        #     username =
+        #     password = user_form.cleaned_data.get('password1')
+        #     print(username)
+        #     print(password)
+        #     user = User.objects.filter(username=username, password=password).first()
+        #     if user:
+        #         auth_user = authenticate(username=user.username,
+        #                                  password=user.password)
+        #         login(request, auth_user, backend='django.contrib.auth.backends.ModelBackend')
+        #         return redirect('patient_panel')
+        #     else:
+        #         user_form.add_error('username', 'username or password is not correct!')
     else:
         user_form = UserForm()
-        patient_form = PatientForm()
     return render(request, "patient_login.html",
-                  {'user_form': user_form, 'patient_form': patient_form})
-
+                  {'user_form': user_form})
 
 
 @login_required(login_url='/patient_register')
@@ -99,3 +112,4 @@ def patient_change_infos(request):
         patient_form = PatientForm()
     return render(request, "patient_register.html",
                   {'user_form': user_form, 'patient_form': patient_form, 'register_or_change': 'change'})
+
