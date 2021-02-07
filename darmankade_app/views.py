@@ -112,9 +112,8 @@ def neorologist(request):
     return render(request, "neorologist.html")
 
 
-def dedicated_doctor_page(request, id):
-    doctor = Doctor.objects.get(id=id)
-    return render(request, "dedicated_doctor_page.html", {'doctor': doctor})
+def dedicated_doctor_page(request):
+    return render(request, "dedicated_doctor_page.html")
 
 
 ######## Doctor section ############
@@ -234,7 +233,8 @@ def doctor_change_infos(request):
                   {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'change'})
 
 
-def get_doctor(request, id):
+def get_doctor(request):
+    id = request.GET.get('id', '1')
     doctor = Doctor.objects.get(id=id)
     stars = doctor.stars.all()
     scores = [star.score for star in stars]
@@ -246,29 +246,32 @@ def get_doctor(request, id):
         stars = int(rate) + 1
     else:
         stars = int(rate)
-    comment = doctor.commets.all()[0]
-    print(doctor.week_days.replace(' False,', '"False",').replace(' True,', '"True",').replace('\'', '"'))
-    week_days = json.loads(doctor.week_days.replace(' False,', '"False",').replace(' True,', '"True",'))
+    
+    comment = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].text
+    commenter = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].patient.user.username
+
+    week_days = json.loads(doctor.week_days.replace(' False', '"False"').replace(' True', '"True"').replace('\'', '"'))
+    print(doctor.week_days)
     data = {
         'id': doctor.id,
         'name': doctor.name,
         'spec': doctor.speciality,
-        'avatar': doctor.photo,
+        'avatar': doctor.photo.url,
         'number': doctor.doctor_number,
         'online_pay': doctor.online_payment,
         'first_empty_date': '30 آذر',  ###؟؟؟؟؟؟؟؟؟
         'experience_years': doctor.experience_year,
         'stars': stars,
         'rate': rate,
-        'commenter': comment.patient.user.username,
-        'comments': len(doctor.commets),
-        'comment_text': comment.text,
+        'commenter': commenter,
+        'comments': len(doctor.commets.all()),
+        'comment_text': comment,
         'address': doctor.address,
         'phone': doctor.phone_number,
         'week_days': [week_days[day] for day in ['saturday', 'sunday', 'monday', 'tuesday',
                                                  'wednesday', 'thursday', 'friday']],
     }
-    JsonResponse(data)
+    return JsonResponse(data)
 
 
 #######################################
@@ -276,8 +279,9 @@ def get_all_doctors(request):
     doctors = Doctor.objects.all()
     data = []
     q = request.GET.get('q', '')
+    spec = request.GET.get('spec', '')
     for doctor in doctors:
-        if not ((q in doctor.name) or (q in doctor.speciality) or (q in doctor.address)):
+        if not ((q in doctor.name) and (spec in doctor.speciality)):
             continue
         scores = list(map(lambda x: x.score, doctor.stars.all()))
         print(scores)
@@ -299,11 +303,6 @@ def get_all_doctors(request):
             'first_empty_date': '30 آذر',  # ؟؟؟؟؟؟؟؟؟
         })
     return JsonResponse(data, safe=False)
-
-
-def search_doctors(request):
-    pass
-
 
 def add_comment(request):
     pass

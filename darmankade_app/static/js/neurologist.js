@@ -9,7 +9,7 @@ function fill_doc_list(doctors)
         new_box.style.display = 'block'
         new_box.id = 'doc-box-'+doc['id']
         new_box.onclick = () => {
-            window.location = './dedicated_doctor_page.html?id=' + doc['id']
+            window.location = './dedicated_doctor_page?id=' + doc['id']
         }
         
         new_box.children[0].children[0].children[0].src = doc['avatar']
