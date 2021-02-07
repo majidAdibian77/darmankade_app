@@ -247,8 +247,14 @@ def get_doctor(request):
     else:
         stars = int(rate)
     
-    comment = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].text
-    commenter = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].patient.user.username
+    comments = []
+    for comment in doctor.commets.all():
+        text = comment.text
+        commenter = comment.patient.user.username
+        comments.append({
+            'commenter': commenter,
+            'text': text
+        })
 
     week_days = json.loads(doctor.week_days.replace(' False', '"False"').replace(' True', '"True"').replace('\'', '"'))
     print(doctor.week_days)
@@ -263,9 +269,7 @@ def get_doctor(request):
         'experience_years': doctor.experience_year,
         'stars': stars,
         'rate': rate,
-        'commenter': commenter,
-        'comments': len(doctor.commets.all()),
-        'comment_text': comment,
+        'comments': comments,
         'address': doctor.address,
         'phone': doctor.phone_number,
         'week_days': [week_days[day] for day in ['saturday', 'sunday', 'monday', 'tuesday',

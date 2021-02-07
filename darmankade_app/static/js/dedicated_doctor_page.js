@@ -3,7 +3,7 @@ function getDoctorInfos(id) {
     // First data of this doctor is get from api
     // then elements of html page is taken to set values
 
-    const url = 'http://localhost:8000/get_doctor?id='+id
+    const url = 'http://localhost:8000/get_doctor?id='+id 
     fetch(url)
         .then(response => response.json()
         ).then(response_json => {
@@ -29,13 +29,13 @@ function getDoctorInfos(id) {
 
             // Following lines is for location of doctor office
             doctor_office_location = document.getElementById('doctor-office-location').getElementsByTagName('button')[0]
-            doctor_office_location.firstChild.data = 'مطب ' + response_json.address.split(/،|-/)[0] // Extract first part of address
+            doctor_office_location.firstChild.data = 'مطب'
 
             // Following lines is for score of doctor
             doctor_rate = document.getElementById('doctor-score-top-div')
             doctor_rate.innerHTML = response_json.rate
             number_of_comments = document.getElementById('doctor-score-div').getElementsByTagName('p')[0]
-            number_of_comments.innerHTML = 'از ' + response_json.comments + ' رای'
+            number_of_comments.innerHTML = 'از ' + response_json.comments.length + ' رای'
             number_of_stars = response_json.stars
             disable_stars = document.getElementById('doctor-score-middle-div').getElementsByTagName('svg')
             for (i = 0; i < 5 - number_of_stars; i++) {  // Change color of stars that is lower than doctor stars
@@ -45,17 +45,34 @@ function getDoctorInfos(id) {
 
             // Following lines is for comments of user
             commenter = document.getElementById('username-comment-example')
-            commenter.lastChild.data = response_json.commenter + ':'  // Set name of user
             comment_text = document.getElementById('user-comment-example').getElementsByTagName('p')[0]
-            comment_text.innerHTML = response_json.comment_text.replace('“', '').replace('“', '')  // Set text of comment
+
+            let sample_comment = null
+            if (response_json.comments.length > 0)
+            {
+                sample_comment = response_json.comments[0]
+                commenter.lastChild.data = sample_comment.commenter + ':'  // Set name of user
+                comment_text.innerHTML = sample_comment.text.replace('“', '').replace('“', '')  // Set text of comment
+            }
+            else
+            {
+                commenter.lastChild.data = 'هیچ کس:'  // Set name of user
+                comment_text.innerHTML = "هیچ کس نظری نداده است."  // Set text of comment
+            }
+
+            loc = document.getElementById('location-explanation-div')
+            loc.children[1].innerHTML = response_json.address
+            loc.children[2].children[0].innerHTML = response_json.phone
+
             witch_office = document.getElementById('free-days-week').getElementsByTagName('h4')[0]
-            witch_office.innerHTML = 'مطب ' + response_json.address.split(/،|-/)[0]  // Extract first part of address
+            witch_office.innerHTML = 'مطب'
 
             // Following lines is for days in weekday section
             selected_week_days = document.getElementsByClassName('selected-day-svg')
             not_selected_week_days = document.getElementsByClassName('not-selected-day-svg')
-            for (i = 0; i < response_json.week_days.length; i++) {  // Show free and busy days in week
-                if (response_json.week_days[i]) {
+            for (i = 0; i < response_json.week_days.length; i++) { // Show free and busy days in week
+                console.log(response_json.week_days[i]) 
+                if (response_json.week_days[i] == "True") {
                     selected_week_days[i].style.display = 'inline'
                     not_selected_week_days[i].style.display = 'none'
                 } else {
