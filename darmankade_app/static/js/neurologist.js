@@ -17,9 +17,9 @@ function fill_doc_list(doctors)
         name_and_comments = new_box.children[0].children[1]
         name_and_comments.children[0].innerHTML = doc['name']
         name_and_comments.children[1].innerHTML = doc['spec']
-        for (let i = 4 ; i >= doc['stars'] ; i++)
+        for (let i = 4 ; i >= doc['stars'] ; i--)
         {
-            name_and_comments.children[2].children[i].children[0].fill = 'none'
+            name_and_comments.children[2].children[i].children[0].setAttribute('fill', 'none')
         }
         name_and_comments.children[2].children[5].innerHTML = '(' + doc['comments'] + ' نظر' + ')'
         name_and_comments.children[3].innerHTML = doc['comment_text']
@@ -40,6 +40,7 @@ var doctors_sorted
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         doctors = JSON.parse(this.response)
+        console.log(doctors)
         doctors_sorted = JSON.parse(JSON.stringify(doctors))
         doctors_sorted.sort((d1, d2) => {
             if (d1['user_percent'] < d2['user_percent'])
@@ -51,9 +52,6 @@ xhttp.onreadystatechange = function() {
         fill_doc_list(doctors)
     }
 };
-
-xhttp.open("GET", "https://intense-ravine-40625.herokuapp.com/doctors", true);
-xhttp.send();
 
 sort_default = document.getElementById('sort_default')
 sort_user_percent = document.getElementById('sort_user_percent')
@@ -77,4 +75,12 @@ sort_user_percent.onclick = () => {
     sort_user_percent.classList.add('text-white')
     sort_user_percent.classList.add('bg-primary')
 }
+
+var intervalId = window.setInterval(function(){
+    url = "http://localhost:8000/get_all_doctors"+window.location.search
+    console.log(url)
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}, 5000);
+
 

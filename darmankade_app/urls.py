@@ -5,7 +5,7 @@ from darmankade_app import views
 urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'^medical_specialties/(?P<id>\d+)$', views.medical_specialties, name="medical_specialties"),
-    url(r'^neorologist$', views.neorologist, name="neorologist"),
+    url(r'^neurologist$', views.neorologist, name="neorologist"),
     url(r'^dedicated_doctor_page$', views.dedicated_doctor_page, name="dedicated_doctor_page"),
 
     url(r'^patient_register$', views.patient_register, name="patient_register"),
@@ -19,4 +19,6 @@ urlpatterns = [
     url(r'^doctor_change_infos$', views.doctor_change_infos, name="doctor_change_infos"),
 
     url(r'^get_doctor/(?P<id>\d+)$', views.get_doctor, name="get_doctor"),
+
+    url(r'^get_all_doctors$', views.get_all_doctors, name="get_all_doctors"),
     ]
