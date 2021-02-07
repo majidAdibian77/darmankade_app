@@ -273,7 +273,6 @@ def get_doctor(request, id):
 
 #######################################
 def get_all_doctors(request):
-    # TODO: doctor.name has only doctor's lastname
     doctors = Doctor.objects.all()
     data = []
     q = request.GET.get('q', '')

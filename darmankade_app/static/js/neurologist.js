@@ -76,11 +76,14 @@ sort_user_percent.onclick = () => {
     sort_user_percent.classList.add('bg-primary')
 }
 
-var intervalId = window.setInterval(function(){
+function exec() {
     url = "http://localhost:8000/get_all_doctors"+window.location.search
     console.log(url)
     xhttp.open("GET", url, true);
     xhttp.send();
-}, 5000);
+}
+
+exec()
+var intervalId = window.setInterval(exec, 5000);
 
 
