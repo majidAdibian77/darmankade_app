@@ -23,4 +23,9 @@ from darmankade import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include("darmankade_app.urls")),
-] + static(settings.STATIC_URL)
+]
+
+urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

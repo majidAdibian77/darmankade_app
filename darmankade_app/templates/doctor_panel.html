@@ -1,0 +1,36 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>ورود</title>
+    <!-- icon in title bar-->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/user_panel.css' %}">
+    <!-- Shabnam font style -->
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+</head>
+
+<body class="flex-flow">
+
+<!-- left side panel with login form -->
+<div id="user-panel-div">
+    <h2>اطلاعات کاربری</h2>
+    {{ user.doctor.photo.url }}
+    <div class="user-panel-item">نام کاربری: {{ user.username }}</div>
+    <div class="user-panel-item">نام: {{ user.doctor.name }}</div>
+    <div class="user-panel-item">تصویر: <img src="{{ user.doctor.photo.url }}" width="60%" height="20%"></div>
+    <div class="user-panel-item">تخصص: {{ user.doctor.speciality }}</div>
+    <div class="user-panel-item">آدرس: {{ user.doctor.address }}</div>
+    <div class="user-panel-item">امکان پرداخت آنلاین: {{ user.doctor.online_payment }}</div>
+    <div class="user-panel-item">تلفن همراه: {{ user.doctor.phone_number }}</div>
+    <div class="user-panel-item">سال تجربه: {{ user.doctor.experience_year }}</div>
+    <div class="user-panel-item">روزهای هفته: {{ user.doctor.week_days }}</div>
+    <a class="btn btn-danger" href="{% url 'doctor_change_infos' %}">تغییر اطلاعات</a>
+    <hr>
+    <a class="btn btn-secondary" href="{% url 'home' %}">صفحه اصلی</a>
+</div>
+</body>
+</html>

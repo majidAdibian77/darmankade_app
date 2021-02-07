@@ -24,9 +24,16 @@ class Patient(models.Model):
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor")
-    name = models.CharField(max_length=11, null=False, blank=False)
-    # class Meta:
-    #     verbose_name = 'Doctor'
+    name = models.CharField(max_length=50, null=False, blank=False)
+    speciality = models.CharField(max_length=50, null=False, blank=False)
+    doctor_number = models.IntegerField( null=False, blank=False)
+    online_payment = models.BooleanField(default=False)
+    experience_year = models.SmallIntegerField(null=False, blank=False)
+    address = models.CharField(max_length=200, null=False, blank=False)
+    phone_number = models.CharField(max_length=11, null=False, blank=False, unique=True)
+    week_days = models.CharField(max_length=150, null=False, blank=False)
+    photo = models.ImageField(null=False, blank=False, upload_to='doctor_profile')
+
     def __str__(self):
         return self.user.username
 

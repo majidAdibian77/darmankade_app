@@ -4,16 +4,22 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from darmankade_app.forms import PatientForm, UserForm, DoctorForm
-from darmankade_app.models import Patient, User
+from darmankade_app.models import Patient, User, Doctor
 
 
 def home(request):
+    """
+    Showing home page of site
+    """
     return render(request, "home.html")
 
 
 def patient_register(request):
+    """
+    This function send a form and get it from patient to register him.
+    If form is valid user Patient creates
+    """
     if request.method == 'POST':
-        # print(request.POST)
         user_form = UserForm(data=request.POST)
         patient_form = PatientForm(data=request.POST)
         if patient_form.is_valid() and user_form.is_valid():
@@ -21,10 +27,6 @@ def patient_register(request):
             patient = patient_form.save(commit=False)
             patient.user = user
             patient.save()
-
-            # print('patient saved')
-            # auth_user = authenticate(username=user.username,
-            #                          password=user.password)
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect('patient_panel')
     else:
@@ -35,6 +37,10 @@ def patient_register(request):
 
 
 def patient_login(request):
+    """
+    This function send a form and get it from patient to login him.
+    If form is valid Patient will be logged in
+    """
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         username = request.POST.get("username")
@@ -47,23 +53,6 @@ def patient_login(request):
             if 'username' in user_form.errors.keys():
                 del user_form.errors['username']
             user_form.add_error('username', 'username or password is not correct!')
-        # username = user_form.cleaned_data.get('username')
-        # print(user_form.errors)
-        # if 'username' in user_form.errors.keys():
-        #     del user_form.errors['username']
-        # if user_form.is_valid():
-        #     username =
-        #     password = user_form.cleaned_data.get('password1')
-        #     print(username)
-        #     print(password)
-        #     user = User.objects.filter(username=username, password=password).first()
-        #     if user:
-        #         auth_user = authenticate(username=user.username,
-        #                                  password=user.password)
-        #         login(request, auth_user, backend='django.contrib.auth.backends.ModelBackend')
-        #         return redirect('patient_panel')
-        #     else:
-        #         user_form.add_error('username', 'username or password is not correct!')
     else:
         user_form = UserForm()
     return render(request, "patient_login.html",
@@ -72,15 +61,14 @@ def patient_login(request):
 
 @login_required(login_url='/patient_register')
 def patient_panel(request):
-    # print(request.user.username)
-    # try:
-    #     patient = Patient.objects.get(user=request.user)
-    # except:
-    #     patient = request.user
     return render(request, 'patient_panel.html', {'user': request.user})
 
 
 def patient_change_infos(request):
+    """
+    This function send a form and get it from patient to change his infos.
+    If form is valid patients infos will be changed
+    """
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         patient_form = PatientForm(data=request.POST)
@@ -90,12 +78,11 @@ def patient_change_infos(request):
         if request.user.username == username:
             del user_form.errors['username']
         phone_number = request.POST.get("phone_number")
-        # patient = Patient.objects.get(username=request.user.username)
         patient = request.user.patient
         if patient.phone_number == phone_number:
-            del user_form.errors['phone_number']
+            del patient_form.errors['phone_number']
 
-        if patient_form.is_valid():
+        if patient_form.is_valid() and user_form.is_valid():
             user = request.user
             user.username = username
             user.set_password = patient_form.cleaned_data.get("password1")
@@ -112,4 +99,134 @@ def patient_change_infos(request):
         patient_form = PatientForm()
     return render(request, "patient_register.html",
                   {'user_form': user_form, 'patient_form': patient_form, 'register_or_change': 'change'})
+
+
+def medical_specialties(request):
+    return render(request, "medical_specialties.html")
+
+
+def neorologist(request):
+    return render(request, "neorologist.html")
+
+
+def dedicated_doctor_page(request, id):
+    doctor = Doctor.objects.get(id=id)
+    return render(request, "dedicated_doctor_page.html", {'doctor': doctor})
+
+
+######## Doctor section ############
+
+
+def doctor_register(request):
+    """
+    This function send a form and get it from doctor to register him.
+    If form is valid user Doctor creates
+    """
+    if request.method == 'POST':
+
+        # print("files:")
+
+        # week_days = {day: day in request.POST for day in ['saturday', 'sunday', 'monday', 'tuesday',
+        #                                                   'wednesday', 'thursday', 'friday']}
+        # print(week_days)
+        user_form = UserForm(data=request.POST)
+        doctor_form = DoctorForm(request.POST, request.FILES)
+        # print(user_form.errors)
+        # print(doctor_form.errors)
+        if doctor_form.is_valid() and user_form.is_valid():
+            print(doctor_form)
+            user = user_form.save()
+            doctor = doctor_form.save(commit=False)
+            doctor.user = user
+            week_days = {day: day in request.POST for day in ['saturday', 'sunday', 'monday', 'tuesday',
+                                               'wednesday', 'thursday', 'friday']}
+            doctor.week_days = str(week_days)
+            doctor.photo = doctor_form.cleaned_data.get('photo')
+            doctor.save()
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('doctor_panel')
+    else:
+        user_form = UserForm()
+        doctor_form = DoctorForm()
+    return render(request, "doctor_register.html",
+                  {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'register'})
+
+
+def doctor_login(request):
+    """
+    This function send a form and get it from patient to login him.
+    If form is valid Patient will be logged in
+    """
+    if request.method == 'POST':
+        user_form = UserForm(data=request.POST)
+        username = request.POST.get("username")
+        password = request.POST.get("password1")
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('doctor_panel')
+        else:
+            if 'username' in user_form.errors.keys():
+                del user_form.errors['username']
+            user_form.add_error('username', 'username or password is not correct!')
+    else:
+        user_form = UserForm()
+    return render(request, "patient_login.html",
+                  {'user_form': user_form})
+
+
+@login_required(login_url='/doctor_register')
+def doctor_panel(request):
+    return render(request, 'doctor_panel.html', {'user': request.user})
+
+
+def doctor_change_infos(request):
+    """
+    This function send a form and get it from patient to change his infos.
+    If form is valid patients infos will be changed
+    """
+    if request.method == 'POST':
+        user_form = UserForm(data=request.POST)
+        doctor_form = DoctorForm(request.POST, request.FILES)
+        username = request.POST.get("username")
+
+        # These lines are used when user write old username in changing user info form
+        if request.user.username == username:
+            del user_form.errors['username']
+        phone_number = request.POST.get("phone_number")
+        doctor = request.user.doctor
+        # print(request.FILES['photo'])
+        if doctor.phone_number == phone_number:
+            del doctor_form.errors['phone_number']
+
+        # if 'phone_number' in doctor_form.errors.keys() and 'Doctor with this Phone number already exists.' in \
+        #         doctor_form.errors['phone_number']:
+        #     doctor_form.errors['phone_number'].remove('Doctor with this Phone number already exists.')
+        print(request.POST)
+        if doctor_form.is_valid() and user_form.is_valid():
+            user = request.user
+            user.username = username
+            user.set_password = doctor_form.cleaned_data.get("password1")
+            doctor.name = doctor_form.cleaned_data.get("name")
+            doctor.speciality = doctor_form.cleaned_data.get("speciality")
+            doctor.address = doctor_form.cleaned_data.get("address")
+            doctor.doctor_number = doctor_form.cleaned_data.get("doctor_number")
+            doctor.experience_year = doctor_form.cleaned_data.get("experience_year")
+            doctor.online_payment = doctor_form.cleaned_data.get("online_payment")
+            doctor.photo = doctor_form.cleaned_data.get('photo')
+            doctor.phone_number = phone_number
+            week_days = {day: day in request.POST for day in ['saturday', 'sunday', 'monday', 'tuesday',
+                                               'wednesday', 'thursday', 'friday']}
+            doctor.week_days = str(week_days)
+            doctor.save()
+            user.save()
+
+            auth_user = authenticate(username=user.username, password=user.password)
+            login(request, auth_user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('doctor_panel')
+    else:
+        user_form = UserForm()
+        doctor_form = DoctorForm()
+    return render(request, "doctor_register.html",
+                  {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'change'})
 

@@ -1,0 +1,157 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>ورود</title>
+    <!-- icon in title bar-->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles/global-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/forms.css' %}">
+    <!-- Shabnam font style -->
+    <link rel="stylesheet" href="{% static 'styles/font.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+</head>
+
+<body class="flex-flow">
+
+<!-- left side panel with login form -->
+<div id="form">
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="{{ doctor_form.phone_number.id_for_label }}">شماره همراه<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.phone_number }}
+        {% for err in doctor_form.phone_number.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ user_form.username.id_for_label }}">نام کاربری<span
+                class="text-danger">*</span></label>
+        {{ user_form.username }}
+        {% for err in user_form.username.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.name.id_for_label }}">نام<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.name }}
+        {% for err in doctor_form.name.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.speciality.id_for_label }}">تخصص<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.speciality }}
+        {% for err in doctor_form.speciality.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.doctor_number.id_for_label }}">شماره نظام پزشکی<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.doctor_number }}
+        {% for err in doctor_form.doctor_number.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.online_payment.id_for_label }}">پرداخت آنلاین<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.online_payment }}
+        {% for err in doctor_form.online_payment.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.experience_year.id_for_label }}">تجربه به سال<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.experience_year }}
+        {% for err in doctor_form.experience_year.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.address.id_for_label }}">آدرس<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.address }}
+        {% for err in doctor_form.address.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        <label for="{{ doctor_form.photo.id_for_label }}">تصویر<span
+                class="text-danger">*</span></label>
+        {{ doctor_form.photo }}
+        {% for err in doctor_form.photo.errors %}
+            <span class="text-danger d-inline">{{ err }}</span>
+        {% endfor %}
+        <br>
+
+        {#        <label for="{{ doctor_form.week_days.id_for_label }}">روزهای هفته<span#}
+        {#                class="text-danger">*</span></label>#}
+        {#        {{ doctor_form.week_days }}#}
+        {#        {% for err in doctor_form.week_days.errors %}#}
+        {#            <span class="text-danger d-inline">{{ err }}</span>#}
+        {#        {% endfor %}#}
+        <label for="saturday">شنبه</label>
+        <input id="saturday" type="checkbox" name="saturday">
+        <label for="sunday">یکشنبه</label>
+        <input id="sunday" type="checkbox" name="sunday">
+        <label for="monday">دوشنبه</label>
+        <input id="monday" type="checkbox" name="monday">
+        <label for="tuesday">سه شنبه</label>
+        <input id="tuesday" type="checkbox" name="tuesday">
+        <label for="wednesday">چهارشنبه</label>
+        <input id="wednesday" type="checkbox" name="wednesday">
+        <label for="thursday">پنجشنبه</label>
+        <input id="thursday" type="checkbox" name="thursday">
+        <label for="friday">جمعه</label>
+        <input id="friday" type="checkbox" name="friday">
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="{{ user_form.password1.id_for_label }}">رمز عبور<span
+                        class="text-danger">*</span></label>
+                {{ user_form.password1 }}
+                {% for err in user_form.password1.errors %}
+                    <span class="text-danger d-inline">{{ err }}</span>
+                {% endfor %}
+                <br>
+
+            </div>
+            <div class="col-md-6">
+                <label for="{{ user_form.password2.id_for_label }}">تکرار رمز عبور<span
+                        class="text-danger">*</span></label>
+                {{ user_form.password2 }}
+                {% for err in user_form.password2.errors %}
+                    <span class="text-danger d-inline">{{ err }}</span>
+                {% endfor %}
+                <br>
+            </div>
+        </div>
+
+        <button class="btn btn-block btn-success" type="submit">{% if register_or_change == 'register' %}ثبت
+            نام{% else %}تغییر اطلاعات{% endif %}</button>
+        <hr>
+        {% if register_or_change == 'register' %}
+            <a href="{% url 'patient_login' %}">
+                <button type="button" class="btn btn-block btn-primary">صفحه ی ورود</button>
+            </a>
+        {% else %}
+
+            {#        {% else %}#}
+            {#            <button class="btn btn-block btn-success" type="submit"></button>#}
+            {#            <hr>#}
+            <a class="btn btn-block btn-primary" href="{% url 'patient_panel' %}">بازگشت به صفحه کاربر</a>
+        {% endif %}
+
+    </form>
+</div>
+</body>
+</html>
