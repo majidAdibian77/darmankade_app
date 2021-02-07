@@ -1,5 +1,8 @@
+import json
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -139,7 +142,7 @@ def doctor_register(request):
             doctor = doctor_form.save(commit=False)
             doctor.user = user
             week_days = {day: day in request.POST for day in ['saturday', 'sunday', 'monday', 'tuesday',
-                                               'wednesday', 'thursday', 'friday']}
+                                                              'wednesday', 'thursday', 'friday']}
             doctor.week_days = str(week_days)
             doctor.photo = doctor_form.cleaned_data.get('photo')
             doctor.save()
@@ -216,7 +219,7 @@ def doctor_change_infos(request):
             doctor.photo = doctor_form.cleaned_data.get('photo')
             doctor.phone_number = phone_number
             week_days = {day: day in request.POST for day in ['saturday', 'sunday', 'monday', 'tuesday',
-                                               'wednesday', 'thursday', 'friday']}
+                                                              'wednesday', 'thursday', 'friday']}
             doctor.week_days = str(week_days)
             doctor.save()
             user.save()
@@ -230,3 +233,56 @@ def doctor_change_infos(request):
     return render(request, "doctor_register.html",
                   {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'change'})
 
+
+def get_doctor(request, id):
+    doctor = Doctor.objects.get(id=id)
+    stars = doctor.stars.all()
+    scores = [star.score for star in stars]
+    if scores:
+        rate = sum(scores) / len(scores)
+    else:
+        rate = 0
+    if rate - int(rate) > 0.5:
+        stars = int(rate) + 1
+    else:
+        stars = int(rate)
+    comment = doctor.commets.all()[0]
+    print(doctor.week_days.replace(' False,', '"False",').replace(' True,', '"True",').replace('\'', '"'))
+    week_days = json.loads(doctor.week_days.replace(' False,', '"False",').replace(' True,', '"True",'))
+    data = {
+        'id': doctor.id,
+        'name': doctor.name,
+        'spec': doctor.speciality,
+        'avatar': doctor.photo,
+        'number': doctor.doctor_number,
+        'online_pay': doctor.online_payment,
+        'first_empty_date': '30 آذر',  ###؟؟؟؟؟؟؟؟؟
+        'experience_years': doctor.experience_year,
+        'stars': stars,
+        'rate': rate,
+        'commenter': comment.patient.user.username,
+        'comments': len(doctor.commets),
+        'comment_text': comment.text,
+        'address': doctor.address,
+        'phone': doctor.phone_number,
+        'week_days': [week_days[day] for day in ['saturday', 'sunday', 'monday', 'tuesday',
+                                                 'wednesday', 'thursday', 'friday']],
+    }
+    JsonResponse(data)
+
+
+#######################################
+def get_all_doctors(request):
+    pass
+
+
+def search_doctors(request):
+    pass
+
+
+def add_comment(request):
+    pass
+
+
+def rate_to_doctor(request):
+    pass

@@ -17,4 +17,6 @@ urlpatterns = [
     url(r'^doctor_login$', views.doctor_login, name="doctor_login"),
     url(r'^doctor_panel$', views.doctor_panel, name="doctor_panel"),
     url(r'^doctor_change_infos$', views.doctor_change_infos, name="doctor_change_infos"),
+
+    url(r'^get_doctor/(?P<id>\d+)$', views.get_doctor, name="get_doctor"),
     ]

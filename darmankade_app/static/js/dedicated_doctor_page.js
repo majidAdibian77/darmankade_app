@@ -3,7 +3,7 @@ function getDoctorInfos(id) {
     // First data of this doctor is get from api
     // then elements of html page is taken to set values
 
-    const url = 'https://intense-ravine-40625.herokuapp.com/doctors/' + id;
+    const url = '{% url "get_doctor" id=id %}';
     fetch(url)
         .then(response => response.json()
         ).then(response_json => {
