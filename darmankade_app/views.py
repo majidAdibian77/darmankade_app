@@ -273,7 +273,33 @@ def get_doctor(request, id):
 
 #######################################
 def get_all_doctors(request):
-    pass
+    # TODO: doctor.name has only doctor's lastname
+    doctors = Doctor.objects.all()
+    data = []
+    q = request.GET.get('q', '')
+    for doctor in doctors:
+        if not ((q in doctor.name) or (q in doctor.speciality) or (q in doctor.address)):
+            continue
+        scores = list(map(lambda x: x.score, doctor.stars.all()))
+        print(scores)
+        rate = 0 if (len(scores) == 0) else (sum(scores) / len(scores))
+        print(rate)
+        stars = int(rate) if (rate - int(rate) < 0.5) else (int(rate) + 1)
+        comment = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].text
+        data.append({
+            'id': doctor.id,
+            'name': doctor.name,
+            'spec': doctor.speciality,
+            'avatar': doctor.photo.url,
+            'stars': stars,
+            'comments': len(doctor.commets.all()),
+            'comment_text': comment,
+            'location': '---',
+            'experience_years': doctor.experience_year,
+            'user_percent': rate,
+            'first_empty_date': '30 آذر',  # ؟؟؟؟؟؟؟؟؟
+        })
+    return JsonResponse(data, safe=False)
 
 
 def search_doctors(request):
