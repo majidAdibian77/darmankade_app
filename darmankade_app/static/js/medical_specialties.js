@@ -4,4 +4,5 @@ for (let i = 0; i < spec_cards.length; i++) {
     see_all_button.onclick = () => {
         window.location.href = 'neurologist?spec='+spec_cards[i].children[0].children[0].children[1].innerHTML
     }
+    // alert(spec_cards[i].children[0].children[0].children[1].innerHTML)
 }

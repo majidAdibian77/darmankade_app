@@ -15,6 +15,9 @@
     <!-- Shabnam font style -->
     <link rel="stylesheet" href="{% static 'styles/font.css' %}">
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
     <title>درمانکده - مشاوره آنلاین و ویزیت حضوری - آزمایش در محل</title>
 
 </head>
@@ -288,16 +291,35 @@
         </div>
 
         <div id="login-box" class="flex-flow">
-            <a href="./login.html" id="login-button" class='flex-flow'>
-                ورود
-                <svg data-v-0fb0a4cb="" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path data-v-0fb0a4cb="" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-                    <polyline data-v-0fb0a4cb="" points="10 17 15 12 10 7"></polyline>
-                    <line data-v-0fb0a4cb="" x1="15" y1="12" x2="3" y2="12"></line>
-                </svg>
-            </a>
+            {% if user.is_authenticated %}
+                {% if user.patient %}
+                    <a class='btn btn-dark' href="{% url 'patient_panel' %}">
+                        {{ user.username }}
+                    </a>
+
+                {% else %}
+                    <a id="login-button" class='flex-flow' href="{% url 'doctor_panel' %}">
+                        (دکتر){{ user.doctor.name }}
+                    </a>
+                {% endif %}
+                <a class='btn btn-danger' href="{% url 'user_logout' %}" style="margin-right: 1%">
+                    خروج
+                </a>
+            {% else %}
+                <a id="login-button" class='flex-flow' href="{% url 'user_login' %}">
+                    ورود
+                    <svg data-v-0fb0a4cb="" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path data-v-0fb0a4cb="" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline data-v-0fb0a4cb="" points="10 17 15 12 10 7"></polyline>
+                        <line data-v-0fb0a4cb="" x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                </a>
+
+            {% endif %}
+
         </div>
     </div>
 </header>
@@ -309,7 +331,7 @@
     <div id="search-box">
 
         <!-- title of search box -->
-        <h1 id="search-title">درمانکده - مشاوره آنلاین و حضوری</h1>
+        <h1 id="search-title">درمانکده - مشاوره آنلاین و حضوری </h1>
 
         <!-- search bar containing text box, city names and search button -->
         <div id="search-bar">
@@ -422,7 +444,7 @@
         <div id="main-comment-box">
             <div id="comment-text">عالی، خیلی دقیق به گفتار بیمار گوش میده و نظر و طبابتش عالی ممنون از دکتر</div>
             <div id="comment-info" class="flex-flow">
-                <img src="{% static 'images/comments/dr.png" width="20px' %}">
+                <img src="{% static 'images/comments/dr.png'  %}" width='20px'>
                 <div>
                     <strong>دکتر محمد کاظم امامی مبیدی</strong>
                     <div>متخصص ارتوپدی</div>

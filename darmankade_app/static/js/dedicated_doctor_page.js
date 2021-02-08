@@ -3,7 +3,7 @@ function getDoctorInfos(id) {
     // First data of this doctor is get from api
     // then elements of html page is taken to set values
 
-    const url = 'http://localhost:8000/get_doctor?id='+id 
+    const url = 'http://localhost:8000/get_doctor?id=' + id
     fetch(url)
         .then(response => response.json()
         ).then(response_json => {
@@ -48,14 +48,11 @@ function getDoctorInfos(id) {
             comment_text = document.getElementById('user-comment-example').getElementsByTagName('p')[0]
 
             let sample_comment = null
-            if (response_json.comments.length > 0)
-            {
+            if (response_json.comments.length > 0) {
                 sample_comment = response_json.comments[0]
                 commenter.lastChild.data = sample_comment.commenter + ':'  // Set name of user
                 comment_text.innerHTML = sample_comment.text.replace('“', '').replace('“', '')  // Set text of comment
-            }
-            else
-            {
+            } else {
                 commenter.lastChild.data = 'هیچ کس:'  // Set name of user
                 comment_text.innerHTML = "هیچ کس نظری نداده است."  // Set text of comment
             }
@@ -89,31 +86,28 @@ function getDoctorInfos(id) {
             comments_section_header.children[1].innerHTML = 'در این قسمت میتوانید نظرات مربوط به آقای دکتر ' + response_json.name + ' را بخوانید.'
 
             let stars = [0, 0, 0, 0, 0]
-            for (let i = 0 ; i < response_json.comments.length ; i++)
-            {
+            for (let i = 0; i < response_json.comments.length; i++) {
                 stars[response_json.comments[i].score - 1] += 1
             }
             all_stars = stars.reduce((a, b) => a + b, 0)
             box = comments_section.children[1].children[0].children[0]
             console.log(stars)
-            for (let i = 1 ; i <= stars.length ; i++)
-            {
+            for (let i = 1; i <= stars.length; i++) {
                 box.children[i].children[2].innerHTML = stars[stars.length - i]
                 box.children[i].children[1].children[0].style.width = stars[stars.length - i] * 100 / all_stars + '%'
             }
 
             all_comments_section = document.getElementById('all_comments')
-            for (let i = 0 ; i < response_json.comments.length ; i++)
-            {
+            for (let i = 0; i < response_json.comments.length; i++) {
                 this_comment = response_json.comments[i]
                 new_node = document.getElementById('sample_comment_section').cloneNode(true)
                 new_node.style.display = 'block'
                 new_node.children[0].children[1].innerHTML = 'نظر ' + this_comment.commenter
                 new_node.children[1].children[0].children[1].children[0].innerHTML = 'مشخص نیست.'
-                for (let j = 4 ; j >= this_comment.score ; j--)
+                for (let j = 4; j >= this_comment.score; j--)
                     new_node.children[1].children[0].children[1].children[1].children[j].setAttribute('fill', 'none')
                 new_node.children[1].children[0].children[2].innerHTML = this_comment.text
-                
+
                 all_comments_section.appendChild(new_node)
             }
         }
@@ -160,7 +154,11 @@ send_comment.onclick = () => {
     patient_id = document.getElementById('patient_id').innerHTML
     doctor_id = myParam
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", 'http://localhost:8000/add_comment?score='+score+'&text='+text+'&patient_id='+patient_id+'&doctor_id='+doctor_id, true);
-    xhttp.send();
+    if (score < 0 || score > 5) {
+        alert('امتیاز داده شده باید بین 0 تا 5 باشد!')
+    } else {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", 'http://localhost:8000/add_comment?score=' + score + '&text=' + text + '&patient_id=' + patient_id + '&doctor_id=' + doctor_id, true);
+        xhttp.send();
+    }
 }

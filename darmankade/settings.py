@@ -130,5 +130,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'darmankade_app/media')
 MEDIA_URL = '/media/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "darmankade_app/static")
-# LOGIN_REDIRECT_URL = 'home'
-# LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

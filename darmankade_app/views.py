@@ -39,7 +39,7 @@ def patient_register(request):
                   {'user_form': user_form, 'patient_form': patient_form, 'register_or_change': 'register'})
 
 
-def patient_login(request):
+def user_login(request):
     """
     This function send a form and get it from patient to login him.
     If form is valid Patient will be logged in
@@ -51,22 +51,26 @@ def patient_login(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            return redirect('patient_panel')
+            if Patient.objects.filter(user=user).count():
+                return redirect('patient_panel')
+            else:
+                return redirect('doctor_panel')
         else:
             if 'username' in user_form.errors.keys():
                 del user_form.errors['username']
             user_form.add_error('username', 'username or password is not correct!')
     else:
         user_form = UserForm()
-    return render(request, "patient_login.html",
+    return render(request, "user_login.html",
                   {'user_form': user_form})
 
 
-@login_required(login_url='/patient_register')
+@login_required(login_url='/user_login')
 def patient_panel(request):
     return render(request, 'patient_panel.html', {'user': request.user})
 
 
+@login_required(login_url='/user_login')
 def patient_change_infos(request):
     """
     This function send a form and get it from patient to change his infos.
@@ -118,7 +122,7 @@ def dedicated_doctor_page(request):
         is_patient = (request.user.patient is not None)
     except:
         pass
-    
+
     patient_id = -1
     if is_patient:
         patient_id = request.user.patient.id
@@ -164,34 +168,35 @@ def doctor_register(request):
                   {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'register'})
 
 
-def doctor_login(request):
-    """
-    This function send a form and get it from patient to login him.
-    If form is valid Patient will be logged in
-    """
-    if request.method == 'POST':
-        user_form = UserForm(data=request.POST)
-        username = request.POST.get("username")
-        password = request.POST.get("password1")
-        user = authenticate(username=username, password=password)
-        if user:
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            return redirect('doctor_panel')
-        else:
-            if 'username' in user_form.errors.keys():
-                del user_form.errors['username']
-            user_form.add_error('username', 'username or password is not correct!')
-    else:
-        user_form = UserForm()
-    return render(request, "patient_login.html",
-                  {'user_form': user_form})
+# def doctor_login(request):
+#     """
+#     This function send a form and get it from patient to login him.
+#     If form is valid Patient will be logged in
+#     """
+#     if request.method == 'POST':
+#         user_form = UserForm(data=request.POST)
+#         username = request.POST.get("username")
+#         password = request.POST.get("password1")
+#         user = authenticate(username=username, password=password)
+#         if user:
+#             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+#             return redirect('doctor_panel')
+#         else:
+#             if 'username' in user_form.errors.keys():
+#                 del user_form.errors['username']
+#             user_form.add_error('username', 'username or password is not correct!')
+#     else:
+#         user_form = UserForm()
+#     return render(request, "user_login.html",
+#                   {'user_form': user_form})
 
 
-@login_required(login_url='/doctor_register')
+@login_required(login_url='/user_login')
 def doctor_panel(request):
     return render(request, 'doctor_panel.html', {'user': request.user})
 
 
+@login_required(login_url='/user_login')
 def doctor_change_infos(request):
     """
     This function send a form and get it from patient to change his infos.
@@ -246,7 +251,7 @@ def doctor_change_infos(request):
 def get_doctor(request):
     id = request.GET.get('id', '1')
     doctor = Doctor.objects.get(id=id)
-    
+
     comments = []
     rate = 0
     for comment in doctor.comments.all():
@@ -315,6 +320,7 @@ def get_all_doctors(request):
             'first_empty_date': '30 آذر',  # ؟؟؟؟؟؟؟؟؟
         })
     return JsonResponse(data, safe=False)
+
 
 def add_comment(request):
     print('hello')
