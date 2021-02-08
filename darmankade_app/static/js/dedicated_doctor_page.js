@@ -71,7 +71,6 @@ function getDoctorInfos(id) {
             selected_week_days = document.getElementsByClassName('selected-day-svg')
             not_selected_week_days = document.getElementsByClassName('not-selected-day-svg')
             for (i = 0; i < response_json.week_days.length; i++) { // Show free and busy days in week
-                console.log(response_json.week_days[i]) 
                 if (response_json.week_days[i] == "True") {
                     selected_week_days[i].style.display = 'inline'
                     not_selected_week_days[i].style.display = 'none'
@@ -80,6 +79,42 @@ function getDoctorInfos(id) {
                     not_selected_week_days[i].style.display = 'inline'
                 }
 
+            }
+
+            //User comments section
+            comments_section = document.getElementById('user-comments')
+
+            comments_section_header = comments_section.children[0].children[1]
+            comments_section_header.children[0].innerHTML = 'نظرات کاربران (تعداد کل نظرها: ' + response_json.comments.length + ')'
+            comments_section_header.children[1].innerHTML = 'در این قسمت میتوانید نظرات مربوط به آقای دکتر ' + response_json.name + ' را بخوانید.'
+
+            let stars = [0, 0, 0, 0, 0]
+            for (let i = 0 ; i < response_json.comments.length ; i++)
+            {
+                stars[response_json.comments[i].score - 1] += 1
+            }
+            all_stars = stars.reduce((a, b) => a + b, 0)
+            box = comments_section.children[1].children[0].children[0]
+            console.log(stars)
+            for (let i = 1 ; i <= stars.length ; i++)
+            {
+                box.children[i].children[2].innerHTML = stars[stars.length - i]
+                box.children[i].children[1].children[0].style.width = stars[stars.length - i] * 100 / all_stars + '%'
+            }
+
+            all_comments_section = document.getElementById('all_comments')
+            for (let i = 0 ; i < response_json.comments.length ; i++)
+            {
+                this_comment = response_json.comments[i]
+                new_node = document.getElementById('sample_comment_section').cloneNode(true)
+                new_node.style.display = 'block'
+                new_node.children[0].children[1].innerHTML = 'نظر ' + this_comment.commenter
+                new_node.children[1].children[0].children[1].children[0].innerHTML = 'مشخص نیست.'
+                for (let j = 4 ; j >= this_comment.score ; j--)
+                    new_node.children[1].children[0].children[1].children[1].children[j].setAttribute('fill', 'none')
+                new_node.children[1].children[0].children[2].innerHTML = this_comment.text
+                
+                all_comments_section.appendChild(new_node)
             }
         }
     ).catch(function (error) {

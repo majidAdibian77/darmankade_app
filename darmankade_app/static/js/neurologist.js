@@ -37,9 +37,16 @@ function fill_doc_list(doctors)
 var xhttp = new XMLHttpRequest();
 var doctors
 var doctors_sorted
+var sorted = 0
+
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         doctors = JSON.parse(this.response)
+        if (doctors.length == 1)
+            {
+                console.log('shit')
+            window.location.href = 'http://localhost:8000/dedicated_doctor_page?id='+doctors[0].id
+        }
         console.log(doctors)
         doctors_sorted = JSON.parse(JSON.stringify(doctors))
         doctors_sorted.sort((d1, d2) => {
@@ -49,7 +56,11 @@ xhttp.onreadystatechange = function() {
                 return -1
             return 0
         })
-        fill_doc_list(doctors)
+
+        if (sorted == 0) 
+            fill_doc_list(doctors)
+        else
+            fill_doc_list(doctors_sorted)
     }
 };
 
@@ -58,6 +69,7 @@ sort_user_percent = document.getElementById('sort_user_percent')
 sort_default.onclick = () => {
     fill_doc_list(doctors)
 
+    sorted = 0
     sort_user_percent.classList.remove('rounded-25px')
     sort_user_percent.classList.remove('text-white')
     sort_user_percent.classList.remove('bg-primary')
@@ -68,6 +80,7 @@ sort_default.onclick = () => {
 sort_user_percent.onclick = () => {
     fill_doc_list(doctors_sorted)
 
+    sorted = 1
     sort_default.classList.remove('rounded-25px')
     sort_default.classList.remove('text-white')
     sort_default.classList.remove('bg-primary')

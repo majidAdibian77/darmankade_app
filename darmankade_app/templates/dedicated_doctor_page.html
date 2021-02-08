@@ -743,7 +743,7 @@
         {% endif %}
 
         <!-- comments of users -->
-        <div class="mt-3 mb-3 border rounded-10px">
+        <div id='user-comments' class="mt-3 mb-3 border rounded-10px">
 
             <!-- header (top section with gray background) -->
             <div class="our-box-header our-bg-dark flex-flow p-2">
@@ -782,11 +782,11 @@
                             <p class="ms-2 font-110">5 ستاره</p>
                             <div class="mt-1 progress w-75" data-v-9804c160="" style="height: 10px;">
                                 <div role="progressbar" aria-valuemin="0" aria-valuemax="52" aria-valuenow="43"
-                                     class="progress-bar" style="width:82.69%;">
+                                     class="progress-bar" style="width:0%;">
                                     <!---->
                                 </div>
                             </div>
-                            <p class="me-2 font-110">43</p>
+                            <p class="me-2 font-110">0</p>
                         </div>
 
                         <!-- 4 stars -->
@@ -794,11 +794,11 @@
                             <p class="ms-2 font-110">4 ستاره</p>
                             <div class="mt-1 progress w-75" data-v-9804c160="" style="height: 10px;">
                                 <div role="progressbar" aria-valuemin="0" aria-valuemax="52" aria-valuenow="43"
-                                     class="progress-bar" style="width:11.53%;">
+                                     class="progress-bar" style="width:0%;">
                                     <!---->
                                 </div>
                             </div>
-                            <p class="me-2 font-110">6</p>
+                            <p class="me-2 font-110">0</p>
                         </div>
 
                         <!-- 3 stars -->
@@ -806,11 +806,11 @@
                             <p class="ms-2 font-110">3 ستاره</p>
                             <div class="mt-1 progress w-75" data-v-9804c160="" style="height: 10px;">
                                 <div role="progressbar" aria-valuemin="0" aria-valuemax="52" aria-valuenow="43"
-                                     class="progress-bar" style="width:3.84%;">
+                                     class="progress-bar" style="width:0%;">
                                     <!---->
                                 </div>
                             </div>
-                            <p class="me-2 font-110">2</p>
+                            <p class="me-2 font-110">0</p>
                         </div>
 
                         <!-- 2 stars -->
@@ -830,11 +830,11 @@
                             <p class="ms-2 font-110">1 ستاره</p>
                             <div class="mt-1 progress w-75" data-v-9804c160="" style="height: 10px;">
                                 <div role="progressbar" aria-valuemin="0" aria-valuemax="52" aria-valuenow="43"
-                                     class="progress-bar" style="width:1.92%;">
+                                     class="progress-bar" style="width:0;">
                                     <!---->
                                 </div>
                             </div>
-                            <p class="me-2 font-110">1</p>
+                            <p class="me-2 font-110">0</p>
                         </div>
 
 
@@ -879,29 +879,26 @@
             </div>
 
             <!-- first user comment -->
-            <div class="border rounded-10px ms-3 me-3 mt-3">
-
+            <div id='sample_comment_section' style="display: none;" class="border rounded-10px ms-3 me-3 mt-3">
+            
                 <!-- comment header -->
                 <div class="our-box-header our-bg-dark flex-flow p-3 position-relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="mt-1">
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                     <div class="me-4 mt-1 font-110">نظر حسین در تاریخ 03 تیر 1398</div>
-                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                         viewBox="0 0 24 24"
-                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
+                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
                         <path data-v-f144f462=""
-                              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
                         </path>
                     </svg>
                     <span class="text-success font-120" style="position: absolute; top: 35px; left: 10px">12</span>
                 </div>
-
+            
                 <!-- info and comment text -->
                 <div class="container">
                     <div class="row">
@@ -913,43 +910,38 @@
                             <h6 class="mb-3">---</h6>
                             <div class="flex-flow">
                                 <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
+                                    viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
                                 <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
+                                    viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
                                 <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
+                                    viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
                                 <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
+                                    viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
                                 <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
+                                    viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
                             </div>
@@ -966,351 +958,8 @@
                 </div>
             </div>
 
-            <!-- second user comment -->
-            <div class="border rounded-10px ms-3 me-3 mt-3">
-
-                <!-- comment header -->
-                <div class="our-box-header our-bg-dark flex-flow p-3 position-relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="mt-1">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <div class="me-4 mt-1 font-110">نظر مجتبی در تاریخ 16 دی 1398</div>
-                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                         viewBox="0 0 24 24"
-                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
-                        <path data-v-f144f462=""
-                              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
-                        </path>
-                    </svg>
-                    <span class="text-success font-120" style="position: absolute; top: 35px; left: 10px">12</span>
-                </div>
-
-                <!-- info and comment text -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">علت مراجعه</h6>
-                            <h6>امتیاز به پزشک</h6>
-                        </div>
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">سردرد</h6>
-                            <div class="flex-flow">
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="col-6 font-120 p-3">بسیار خوب و با آرامش پذیرای بیمار هستن و حتی برای سوال راجع به
-                            بیماری
-                            نوعی میپرسن که احتمال ناراحتی رو به بیمار ندن . و
-                            خیلی خوشحال هستم که دستگاه نوار مغز رو در مطب شون دارن و از سرگردان شدن بیمار در کوچه و
-                            خیابان
-                            جلوگیری میکنند.
-                        </div>
-                    </div>
-                </div>
+            <div id='all_comments'>
             </div>
-
-            <!-- third user comment -->
-            <div class="border rounded-10px ms-3 me-3 mt-3">
-
-                <!-- comment header -->
-                <div class="our-box-header our-bg-dark flex-flow p-3 position-relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="mt-1">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <div class="me-4 mt-1 font-110">نظر احمد در تاریخ 17 مهر 1398</div>
-                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                         viewBox="0 0 24 24"
-                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
-                        <path data-v-f144f462=""
-                              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
-                        </path>
-                    </svg>
-                    <span class="text-success font-120" style="position: absolute; top: 35px; left: 10px">11</span>
-                </div>
-
-                <!-- info and comment text -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">علت مراجعه</h6>
-                            <h6>امتیاز به پزشک</h6>
-                        </div>
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">---</h6>
-                            <div class="flex-flow">
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="col-6 font-120 p-3">عالی عالی به نظرم آقای دکتر جلالی بهترین دکتری که من دیدم هم از
-                            نظر
-                            معاینه کردن و تحویل گرفتن و رفتار خوبشون با کل مریض
-                            هایی که باهام بودن و از خداوند ارزوی موفقیت در کارهایشان هم خود و هم منشی محترمشان
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4th user comment -->
-            <div class="border rounded-10px ms-3 me-3 mt-3">
-
-                <!-- comment header -->
-                <div class="our-box-header our-bg-dark flex-flow p-3 position-relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="mt-1">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <div class="me-4 mt-1 font-110">نظر محبوبه در تاریخ 14 مهر 1399</div>
-                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                         viewBox="0 0 24 24"
-                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
-                        <path data-v-f144f462=""
-                              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
-                        </path>
-                    </svg>
-                    <span class="text-success font-120" style="position: absolute; top: 35px; left: 10px">4</span>
-                </div>
-
-                <!-- info and comment text -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">علت مراجعه</h6>
-                            <h6>امتیاز به پزشک</h6>
-                        </div>
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">موارد دیگر</h6>
-                            <div class="flex-flow">
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="col-6 font-120 p-3">عالی عالی به نظرم آقای دکتر جلالی بهترین دکتری که من دیدم هم از
-                            نظر
-                            معاینایشون عالی بودن انقدر دلسوزانه بدون پیش داوری ویزیتم کردن و برام دارو تجویز کردن که
-                            احساس کردم
-                            راجبع درد هام دارم با
-                            پدرم صحبت میکنم
-                            عالین ایشون براشون سلامتی ارزو میکنم
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4th user comment -->
-            <div class="border rounded-10px m-3">
-
-                <!-- comment header -->
-                <div class="our-box-header our-bg-dark flex-flow p-3 position-relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="mt-1">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <div class="me-4 mt-1 font-110">نظر راحله در 31 تیر 1397</div>
-                    <svg data-v-f144f462="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                         viewBox="0 0 24 24"
-                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="cur-pointer text-success" style="position: absolute; top: 10px; left: 10px">
-                        <path data-v-f144f462=""
-                              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
-                        </path>
-                    </svg>
-                    <span class="text-success font-120" style="position: absolute; top: 35px; left: 10px">8</span>
-                </div>
-
-                <!-- info and comment text -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">علت مراجعه</h6>
-                            <h6>امتیاز به پزشک</h6>
-                        </div>
-                        <div class="col-3 p-3">
-                            <h6 class="mb-3">پیگیری روند درمان</h6>
-                            <div class="flex-flow">
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="blue" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                <svg data-v-41e50536="" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                     viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <polygon data-v-41e50536=""
-                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="col-6 font-120 p-3">خیلی وقت هست که به خاطر بیماری زیر نظر آقای دکتر هستم - خیلی
-                            دکتر خوب و
-                            حاذقی هستند و من از این که از اول برای مدوا به
-                            ایشان مراجعه کردم کمال رضایتمندی رو از ایشان دارم.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
         </div>
     </div>
