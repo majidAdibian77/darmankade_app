@@ -42,12 +42,8 @@ var sorted = 0
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         doctors = JSON.parse(this.response)
-        if (doctors.length == 1)
-            {
-                console.log('shit')
+        if (doctors.length == 1 && !window.location.href.includes('spec'))
             window.location.href = 'http://localhost:8000/dedicated_doctor_page?id='+doctors[0].id
-        }
-        console.log(doctors)
         doctors_sorted = JSON.parse(JSON.stringify(doctors))
         doctors_sorted.sort((d1, d2) => {
             if (d1['user_percent'] < d2['user_percent'])
