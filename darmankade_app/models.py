@@ -37,14 +37,8 @@ class Doctor(models.Model):
     def __str__(self):
         return self.user.username
 
-
-class Star(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='stars')
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='stars')
-    score = models.SmallIntegerField(null=False, blank=False, default=0)
-
-
 class Comment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='commets')
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='commets')
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='comments')
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='comments')
     text = models.TextField(max_length=500 ,null=False, blank=False)
+    score = models.SmallIntegerField(null=False, blank=False, default=0)

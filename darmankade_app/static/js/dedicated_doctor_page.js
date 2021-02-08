@@ -116,3 +116,16 @@ if (myParam == null) {
 } else {
     getDoctorInfos(myParam)
 }
+
+
+send_comment = document.getElementById('send_comment')
+send_comment.onclick = () => {
+    score = document.getElementById('num_stars').value
+    text = document.getElementById('comment_text').value
+    patient_id = document.getElementById('patient_id').innerHTML
+    doctor_id = myParam
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", 'http://localhost:8000/add_comment?score='+score+'&text='+text+'&patient_id='+patient_id+'&doctor_id='+doctor_id, true);
+    xhttp.send();
+}

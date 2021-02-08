@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^get_doctor$', views.get_doctor, name="get_doctor"),
 
     url(r'^get_all_doctors$', views.get_all_doctors, name="get_all_doctors"),
+    url(r'^add_comment$', views.add_comment, name="add_comment"),
     ]

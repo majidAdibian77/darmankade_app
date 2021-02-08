@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from darmankade_app.forms import PatientForm, UserForm, DoctorForm
-from darmankade_app.models import Patient, User, Doctor
+from darmankade_app.models import Comment, Patient, User, Doctor
 
 
 def home(request):
@@ -113,7 +113,17 @@ def neorologist(request):
 
 
 def dedicated_doctor_page(request):
-    return render(request, "dedicated_doctor_page.html")
+    is_patient = False
+    try:
+        is_patient = (request.user.patient is not None)
+    except:
+        pass
+    
+    patient_id = -1
+    if is_patient:
+        patient_id = request.user.patient.id
+
+    return render(request, "dedicated_doctor_page.html", {'patient_login': is_patient, 'patient_id': patient_id})
 
 
 ######## Doctor section ############
@@ -236,28 +246,26 @@ def doctor_change_infos(request):
 def get_doctor(request):
     id = request.GET.get('id', '1')
     doctor = Doctor.objects.get(id=id)
-    stars = doctor.stars.all()
-    scores = [star.score for star in stars]
-    if scores:
-        rate = sum(scores) / len(scores)
-    else:
-        rate = 0
+    
+    comments = []
+    rate = 0
+    for comment in doctor.comments.all():
+        text = comment.text
+        score = comment.score
+        commenter = comment.patient.user.username
+        comments.append({
+            'commenter': commenter,
+            'text': text,
+            'score': score
+        })
+        rate += comment.score / len(doctor.comments.all())
     if rate - int(rate) > 0.5:
         stars = int(rate) + 1
     else:
         stars = int(rate)
-    
-    comments = []
-    for comment in doctor.commets.all():
-        text = comment.text
-        commenter = comment.patient.user.username
-        comments.append({
-            'commenter': commenter,
-            'text': text
-        })
+    rate = '{:.1f}'.format(rate)
 
     week_days = json.loads(doctor.week_days.replace(' False', '"False"').replace(' True', '"True"').replace('\'', '"'))
-    print(doctor.week_days)
     data = {
         'id': doctor.id,
         'name': doctor.name,
@@ -287,21 +295,21 @@ def get_all_doctors(request):
     for doctor in doctors:
         if not ((q in doctor.name) and (spec in doctor.speciality)):
             continue
-        scores = list(map(lambda x: x.score, doctor.stars.all()))
+        scores = list(map(lambda x: x.score, doctor.comments.all()))
         print(scores)
         rate = 0 if (len(scores) == 0) else (sum(scores) / len(scores))
-        print(rate)
         stars = int(rate) if (rate - int(rate) < 0.5) else (int(rate) + 1)
-        comment = '---' if len(doctor.commets.all()) == 0 else doctor.commets.all()[0].text
+        rate = '{:.1f}'.format(rate)
+        comment = 'هیچ نظری موجود نیست' if len(doctor.comments.all()) == 0 else doctor.comments.all()[0].text
         data.append({
             'id': doctor.id,
             'name': doctor.name,
             'spec': doctor.speciality,
             'avatar': doctor.photo.url,
             'stars': stars,
-            'comments': len(doctor.commets.all()),
+            'comments': len(doctor.comments.all()),
             'comment_text': comment,
-            'location': '---',
+            'location': 'ایران',
             'experience_years': doctor.experience_year,
             'user_percent': rate,
             'first_empty_date': '30 آذر',  # ؟؟؟؟؟؟؟؟؟
@@ -309,8 +317,13 @@ def get_all_doctors(request):
     return JsonResponse(data, safe=False)
 
 def add_comment(request):
-    pass
-
-
-def rate_to_doctor(request):
-    pass
+    print('hello')
+    score = request.GET.get('score', 0)
+    text = request.GET.get('text', 'نظر خالی')
+    patient_id = request.GET.get('patient_id', None)
+    doctor_id = request.GET.get('doctor_id', None)
+    patient = Patient.objects.get(id=int(patient_id))
+    doctor = Doctor.objects.get(id=int(doctor_id))
+    comment = Comment(score=score, text=text, patient=patient, doctor=doctor)
+    comment.save()
+    return JsonResponse({'success': True})
