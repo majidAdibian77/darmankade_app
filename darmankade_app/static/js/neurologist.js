@@ -43,7 +43,7 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         doctors = JSON.parse(this.response)
         if (doctors.length == 1 && !window.location.href.includes('spec'))
-            window.location.href = 'http://localhost:8000/dedicated_doctor_page?id='+doctors[0].id
+            window.location.href = 'dedicated_doctor_page?id='+doctors[0].id
         doctors_sorted = JSON.parse(JSON.stringify(doctors))
         doctors_sorted.sort((d1, d2) => {
             if (d1['user_percent'] < d2['user_percent'])
@@ -86,7 +86,7 @@ sort_user_percent.onclick = () => {
 }
 
 function exec() {
-    url = "http://localhost:8000/get_all_doctors"+window.location.search
+    url = "get_all_doctors"+window.location.search
     console.log(url)
     xhttp.open("GET", url, true);
     xhttp.send();

@@ -25,6 +25,7 @@
 <body class="bg-light">
 
 
+
 <!-- menu section on the top of the page -->
 <header id="main-header">
     <div id="header-container" class="flex-flow">
@@ -300,7 +301,7 @@
 
                 {% else %}
                     <a id="login-button" class='flex-flow' href="{% url 'doctor_panel' %}">
-                        (دکتر){{ user.doctor.name }}
+                        (پزشک){{ user.doctor.name }}
                     </a>
                 {% endif %}
                 <a class='btn btn-danger' href="{% url 'user_logout' %}" style="margin-right: 1%">

@@ -299,7 +299,7 @@
 
                 {% else %}
                     <a id="login-button" class='flex-flow' href="{% url 'doctor_panel' %}">
-                        (دکتر){{ user.doctor.name }}
+                        (پزشک){{ user.doctor.name }}
                     </a>
                 {% endif %}
                 <a class='btn btn-danger' href="{% url 'user_logout' %}" style="margin-right: 1%">

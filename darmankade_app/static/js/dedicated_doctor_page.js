@@ -158,7 +158,7 @@ send_comment.onclick = () => {
         alert('امتیاز داده شده باید بین 0 تا 5 باشد!')
     } else {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", 'http://localhost:8000/add_comment?score=' + score + '&text=' + text + '&patient_id=' + patient_id + '&doctor_id=' + doctor_id, true);
+        xhttp.open("GET", 'add_comment?score=' + score + '&text=' + text + '&patient_id=' + patient_id + '&doctor_id=' + doctor_id, true);
         xhttp.send();
     }
 }
