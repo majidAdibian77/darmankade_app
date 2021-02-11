@@ -8,7 +8,7 @@ spec_texts= document.getElementsByClassName('spec-box-text')
 for (let i = 0; i < spec_boxes.length; i++) {
     // alert(spec_texts[i].innerHTML)
     spec_boxes[i].onclick = () => {
-        window.location.href = "neurologist?q=" + spec_texts[i].innerHTML;
+        window.location.href = "neurologist?spec=" + spec_texts[i].innerHTML;
     }
 }
 

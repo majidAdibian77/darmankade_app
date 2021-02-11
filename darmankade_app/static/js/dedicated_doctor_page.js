@@ -98,6 +98,7 @@ function getDoctorInfos(id) {
             }
 
             all_comments_section = document.getElementById('all_comments')
+            all_comments_section.innerHTML = ''
             for (let i = 0; i < response_json.comments.length; i++) {
                 this_comment = response_json.comments[i]
                 new_node = document.getElementById('sample_comment_section').cloneNode(true)
@@ -114,6 +115,7 @@ function getDoctorInfos(id) {
     ).catch(function (error) {
     })
 }
+
 
 function change_weekday_officeinfo(witch_tab) {
     // This function is called when user click on "اطلاعات مطب" or "روزهای هفته" in doctor page
@@ -138,13 +140,20 @@ function change_weekday_officeinfo(witch_tab) {
     }
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('id');
-if (myParam == null) {
-    getDoctorInfos(1)
-} else {
-    getDoctorInfos(myParam)
+
+
+function exec() {
+    urlParams = new URLSearchParams(window.location.search);
+    myParam = urlParams.get('id');
+    if (myParam == null) {
+        getDoctorInfos(1)
+    } else {
+        getDoctorInfos(myParam)
+    }
 }
+
+exec()
+var intervalId = window.setInterval(exec, 5000);
 
 
 send_comment = document.getElementById('send_comment')

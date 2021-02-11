@@ -168,29 +168,6 @@ def doctor_register(request):
                   {'user_form': user_form, 'doctor_form': doctor_form, 'register_or_change': 'register'})
 
 
-# def doctor_login(request):
-#     """
-#     This function send a form and get it from patient to login him.
-#     If form is valid Patient will be logged in
-#     """
-#     if request.method == 'POST':
-#         user_form = UserForm(data=request.POST)
-#         username = request.POST.get("username")
-#         password = request.POST.get("password1")
-#         user = authenticate(username=username, password=password)
-#         if user:
-#             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-#             return redirect('doctor_panel')
-#         else:
-#             if 'username' in user_form.errors.keys():
-#                 del user_form.errors['username']
-#             user_form.add_error('username', 'username or password is not correct!')
-#     else:
-#         user_form = UserForm()
-#     return render(request, "user_login.html",
-#                   {'user_form': user_form})
-
-
 @login_required(login_url='/user_login')
 def doctor_panel(request):
     return render(request, 'doctor_panel.html', {'user': request.user})
@@ -278,7 +255,7 @@ def get_doctor(request):
         'avatar': doctor.photo.url,
         'number': doctor.doctor_number,
         'online_pay': doctor.online_payment,
-        'first_empty_date': '30 آذر',  ###؟؟؟؟؟؟؟؟؟
+        'first_empty_date': '30 آذر',
         'experience_years': doctor.experience_year,
         'stars': stars,
         'rate': rate,
@@ -323,7 +300,6 @@ def get_all_doctors(request):
 
 
 def add_comment(request):
-    print('hello')
     score = request.GET.get('score', 0)
     text = request.GET.get('text', 'نظر خالی')
     patient_id = request.GET.get('patient_id', None)
