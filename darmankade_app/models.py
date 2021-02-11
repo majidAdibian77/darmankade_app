@@ -23,9 +23,18 @@ class Patient(models.Model):
 
 
 class Doctor(models.Model):
+    specs = (
+        ("ارتوپدی", "ارتوپدی"),
+        ("اورولوژی", "اورولوژی"),
+        ("پوست و مو", "پوست و مو"),
+        ("زنان و زایمان", "زنان و زایمان"),
+        ("داخلی", "داخلی"),
+        ("گوش، حلق و بینی", "گوش، حلق و بینی"),
+        ("مغز و اعصاب", "مغز و اعصاب"),
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor")
     name = models.CharField(max_length=50, null=False, blank=False)
-    speciality = models.CharField(max_length=50, null=False, blank=False)
+    speciality = models.CharField(max_length=50, null=False, blank=False, choices=specs)
     doctor_number = models.IntegerField( null=False, blank=False)
     online_payment = models.BooleanField(default=False)
     experience_year = models.SmallIntegerField(null=False, blank=False)
